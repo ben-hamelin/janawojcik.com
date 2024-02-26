@@ -23,7 +23,8 @@
         "drush/drush": "^12",
         "drupal/pathauto": "^1.12",
         "drupal/admin_toolbar": "^3.4",
-        "drupal/metatag": "^2.0"
+        "drupal/metatag": "^2.0",
+        "drupal/mahi": "^1.0"
     },
     "require-dev": {
         "drupal/core-dev": "^10"

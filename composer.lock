@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "906b1dfc9dd0040e5400cfd5ba7b089a",
+    "content-hash": "888c0a37e13d54770a86d92a9cc9d17c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1664,6 +1664,50 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/ctools",
                 "issues": "https://www.drupal.org/project/issues/ctools"
+            }
+        },
+        {
+            "name": "drupal/mahi",
+            "version": "1.0.15",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/mahi.git",
+                "reference": "1.0.15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/mahi-1.0.15.zip",
+                "reference": "1.0.15",
+                "shasum": "9300b94a9512fc9f64b21de643a1405c381f3178"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.15",
+                    "datestamp": "1705731829",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ravis",
+                    "homepage": "https://www.drupal.org/user/79351"
+                }
+            ],
+            "description": "<p>Mahi is a light weight modern Drupal 9, 10 theme by <a href=\"https://drupar.com/\" target=\"_blank\">Drupar.com</a></p><p><a href=\"https://drupar.com/theme/mahi\" target=\"_blank\">Theme Homepage</a> | <a href=\"https://drupar.com/doc/mahi\" target=\"_blank\">User Guide</a></p>",
+            "homepage": "https://www.drupal.org/project/mahi",
+            "support": {
+                "source": "https://git.drupalcode.org/project/mahi"
             }
         },
         {

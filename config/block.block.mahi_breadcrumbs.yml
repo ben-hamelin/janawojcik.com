@@ -1,0 +1,22 @@
+uuid: 773d4581-b4f9-4382-be5f-a1e94b6309d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - mahi
+_core:
+  default_config_hash: E7ZFXXrrN9ZTeE2myhyEjYge1XXRgTPXN9a5c8KoyrM
+id: mahi_breadcrumbs
+theme: mahi
+region: page_header
+weight: -12
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

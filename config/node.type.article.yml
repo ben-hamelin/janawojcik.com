@@ -1,0 +1,17 @@
+uuid: 77eceed3-9391-425f-81c5-686d82c2c939
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Blog
+type: article
+description: 'Blogs are used to publish blog posts on the site. They will automatically output on the blog page once published.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

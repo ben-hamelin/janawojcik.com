@@ -1,0 +1,17 @@
+uuid: ea4d0599-dbd6-4b1b-93bd-5dd05776e598
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Story
+type: story
+description: 'Stories are used to publish short stories on the site. They will automatically output on the stories page once published.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
