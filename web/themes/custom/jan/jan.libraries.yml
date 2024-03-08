@@ -2,13 +2,26 @@ custom-css:
   version: 1.x
   css:
     theme:
-      css/custom/custom.css: {}
-      css/custom/developer-overrides.css: {}
+      assets/css/style.css: {}
+      assets/css/custom/developer-overrides.css: {}
+
+header-js:
+  version: 1.x
+  header: true
+  js:
+    assets/js/vendor/modernizr-3.5-custom.js: {}
+  dependencies:
+    - core/jquery
 
 custom-js:
   version: 1.x
   js:
-    js/custom/custom.js: {}
+    assets/js/app.js: {}
+    assets/js/jquery.easing.1.3.js: {}
+    assets/js/animate.js: {}
+    assets/js/vendor/viewport.min.js: {}
+    assets/js/ui/effect.min.js: {}
+    assets/js/vendor/headroom.js: {}
   dependencies:
     - core/jquery
 

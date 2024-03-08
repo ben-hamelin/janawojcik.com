@@ -49,44 +49,376 @@
 {% include directory ~ '/includes/include.twig' %}
 
 
-<!--///////////////////////////////////////////////// CONTENT BREAK ////////////////////////////////////////////////////////-->
-<!-- Header -->
-<header role="banner" class="site-header clearfix">
+<!--Search Panel-->
+<div id="searchFormModulePanel" class="searchFormPanelContainer">
+    <div class="searchFormPanelInnerContainer">
+        <div class="searchFormPanelWrapper">
+            <div class="searchFormPanelInnerWrapper">
+                <div class="searchFormPanelTxtContainer">
+                    <div class="searchFormPanelTitle">Looking for something?</div>
+                    <div class="searchFormPanelTeaser">Search here to find what you ....... </div>
+                </div>
+                <div class="searchFormPanelFormContainer">
+                    <form action=" " method="post" id="search" accept-charset="UTF-8">
+                        <div>
+                            <div class="searchFormPanelSearchField">
+                                <input title="Enter the terms you wish to search for." placeholder="search term" type="text" id="" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+                            </div>
+                            <input type="hidden" name="" value="" />
+                            <input type="hidden" name="form_id" value="search_block_form" />
+                            <div class="searchFormPanelButtonWrappers">
+                                <input class="searchSubmit form-submit" type="submit" id="edit-submit" name="op" value="Search" />
+                                <a href="#search_link" class="searchPanel_close" title="Close form">
+                                    <span class="sr-only">Close form</span>
+                                    <i class="fas fa-window-close"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="errorContainer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END Search Panel-->
 
-    <div class="global-width clearfix">
 
-        <!-- Header Logo -->
-        <div class="header-logo">
-            <a href="/">
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
 
-            </a>
+
+<!--Header-->
+<header id="header" class="cf">
+    <div class="navigation">
+
+        <div class="navigation__lower__bar">
+            <div class="globalWidth header-spacer">
+
+                <div class="headerLogo">
+                    <a href="/" title="" class="header__addy__logo">
+                        <img src="assets/img/Logo-Rev.svg" alt="" class="logo-large">
+                        <img src="assets/img/Logo-Rev.svg" class="logo-small" alt="">
+                    </a>
+                </div>
+
+                <div class="mobileBtnWrapper">
+                    <div class="mobileBtnWrapper__icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <nav id="mainMenu" role="navigation" class="menuContainer">
+
+                    <div class="menuContainer-wrapper">
+                        <!--Main Nav-->
+                        <ul class="adwMenu">
+
+                            <li class="tierMenu empty">
+                                <a href="#" tabindex="0" title="">about Jan</a>
+                            </li>
+
+                            <li class="tierMenu empty">
+                                <a href="#" tabindex="0" title="">the Books</a>
+                            </li>
+
+                            <li class="tierMenu empty">
+                                <a href="#" tabindex="0" title="">published Stories</a>
+                            </li>
+
+                            <li class="tierMenu empty">
+                                <a href="#" tabindex="0" title="">gallery</a>
+                            </li>
+
+                            <li class="tierMenu empty">
+                                <a href="#" tabindex="0">contact</a>
+                            </li>
+
+                        </ul>
+                        <!--END Main Nav-->
+                    </div>
+
+                </nav>
+
+                <!--Search-->
+                <div class="nav-search">
+                    <a href="JavaScript:Void(0);" title="Site Search"  class="searchPanel_open">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+                <!--END Search-->
+
+            </div>
         </div>
 
-        <!-- Header Tagline -->
-        <div class="header-tagline">Welcome to the Drupal Starter Theme</div>
-
-        {{ page.menu }}
-
-    </div> <!-- /.global-width.clearfix -->
-
-</header> <!-- /header.site-header.clearfix -->
+    </div>
+</header>
+<!--END Header-->
 
 
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
 
-<!-- Subpage Content -->
-<div class="subpage-content-container clearfix">
 
-    <!-- Page Content -->
-    <div class="page-content wow bounceInUp">
+<!--Page Content-->
+<div class="page-wrapper">
 
-        {{ page.help }}
+    {{ page.help }}
 
-        {{ page.highlighted }}
+    {{ page.highlighted }}
 
-        {{ page.content }}
+    {{ page.content }}
 
-    </div> <!-- /.page-content -->
+    <main id="main-content" role="main">
 
-</div> <!-- /.subpage-content-container.clearfix -->
+        <!-- ##### Home Hero ######################### -->
 
-{{ page.footer }}
+        <div class="hero home-hero">
+
+            <!--Required Image-->
+            <div class="hero-media media-position--default">
+                <img src="assets/img/Home-BG-img.jpg" alt="">
+            </div>
+            <!--END Required Image-->
+
+            <!--Title + Intro-->
+            <div class="upper-content">
+                <div class="globalWidth">
+                    <div>
+                        <div class="upper-content--wrapper">
+
+                            <div class="home-content--left">
+
+                                <div class="home-eyebrow">
+                                    <div class="home-eyebrow--wrapper">Featured Book</div>
+                                </div>
+
+                                <div class="home-content--left-inner">
+                                    <h1>Grateful for the Time We Had</h1>
+                                    <div class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin orci tellus, ultrices consectetur purus id, condimentum lacinia mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam porta metus tortor, sed ullamcorper felis dignissim egestas.</div>
+                                    <!--Optional Btns-->
+                                    <div class="optional-btns">
+                                        <a class="btn btn--reverse" href="/" title="">Learn More</a>
+                                        <a class="btn" href="/" title="">Purchase the Book</a>
+                                    </div>
+                                    <!--END Optional Btns-->
+                                </div>
+
+                            </div>
+
+                            <div class="home-content--right">
+                                <img src="assets/img/Book-Mockup.png" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--END Title + Intro-->
+
+        </div>
+
+        <!-- ##### END Home Hero ##################### -->
+
+    </main>
+
+
+    <!--##########################################################################################-->
+
+
+    <div class="component-gradient-container">
+
+        <!--Testimonials -- Multiple Slider-->
+        <section class="testimonials-multiple-slider-panel white-panel">
+            <div class="globalWidth">
+
+                <div>
+                    <h2>Kind Words...</h2>
+                </div>
+
+                <div class="slide-wrap">
+                    <div class="slideshow">
+
+                        <div class="slide-entry">
+                            <div class="slide-content">
+                                <div class="slide-quote">Slide 1: Nunc eleifend sed dolor in dignissim. Pellentesque in venenatis augue, id mattis ligula. Aliquam egestas pulvinar magna vel iaculis. Maecenas in dictum sem, nec cursus ligula. Suspendisse ornare, augue sed molestie semper, risus ante egestas ex, sit amet pharetra nisi dolor nec nisi. Donec vitae pharetra orci, sed cursus nibh. Donec in justo neque. Proin imperdiet est lectus, non pretium dolor pretium a. In ut metus vitae urna malesuada volutpat sed non libero.</div>
+                                <div class="slide-meta">
+                                    <div class="slide-meta--name">John Smith</div>
+                                    <div class="slide-meta--position">Position, Company</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide-entry">
+                            <div class="slide-content">
+                                <div class="slide-quote">Slide 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas massa ligula, pharetra ut sapien vel, maximus lacinia ante. Nunc et lectus dignissim, consectetur diam vel, efficitur orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque rhoncus quis justo nec lacinia. Ut commodo tortor orci, at auctor libero consequat pharetra. Fusce posuere neque non lacus faucibus commodo. Donec ligula augue, dictum id elementum ac, porttitor et neque. Duis metus leo, accumsan eu ullamcorper quis, dictum nec risus. Fusce molestie, turpis vitae pretium pellentesque, ipsum augue suscipit dolor, eu tempus ligula augue interdum erat. Integer a nisl orci. Vestibulum molestie, tellus et malesuada semper, metus tellus faucibus neque, vitae cursus tortor turpis quis orci. Nulla nec tellus eget tortor imperdiet tristique. Donec fringilla nibh a enim sodales sodales. Cras eu enim eu lectus efficitur pharetra accumsan at massa.</div>
+                                <div class="slide-meta">
+                                    <div class="slide-meta--name">John Smith</div>
+                                    <div class="slide-meta--position">Position, Company</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide-entry">
+                            <div class="slide-content">
+                                <div class="slide-quote">Slide 3: Nulla lobortis ut quam ac tempor. Maecenas quis nisi risus. Cras ut semper ante. In ac ipsum eget leo volutpat vulputate id et lectus. Nunc rhoncus nulla nec rhoncus malesuada.</div>
+                                <div class="slide-meta">
+                                    <div class="slide-meta--name">John Smith</div>
+                                    <div class="slide-meta--position">Position, Company</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <ul class="slide-nav">
+                        <li id="prev-slide"><i class="fal fa-long-arrow-left"></i></li>
+                        <li id="next-slide"><i class="fal fa-long-arrow-right"></i></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        <!--END Testimonials -- Multiple Slider-->
+
+        <!-------------------------------------->
+
+        <!--Full Width Promo (caption: right)-->
+        <section class="full-width__promo csvc-align-right sequence-anim-parent">
+
+            <!--Panel Image-->
+            <div class="full-width__promo__image">
+                <img loading="lazy" src="assets/img/male-basketball.jpg" width="1600" height="800" alt="">
+            </div>
+            <!--END Panel Image-->
+
+            <div class="globalWidth">
+                <div class="full-width__promo__container sequence-anim-item fade-in">
+
+                    <!--Optional Title + Intro-->
+                    <div class="full-width__promo__title">
+                        <div class="full-width__promo__title-wrapper">
+                            <h2>Featured Story</h2>
+                            <div class="full-width__promo__title--content">
+                                <p>Nunc eleifend sed dolor in dignissim. Pellentesque in venenatis augue, id mattis ligula. Aliquam egestas pulvinar magna vel iaculis. Maecenas in dictum sem, nec cursus ligula. Suspendisse ornare.</p>
+                            </div>
+                            <!--Optional Button-->
+                            <a href="/" title="" class="btn btn--reverse">All Published Stories</a>
+                            <!--END Optional Button-->
+                        </div>
+                    </div>
+                    <!--END Optional Title + Intro-->
+
+                    <!--Panel-->
+                    <div class="full-width__promo__wrapper">
+                        <div class="full-width__promo__wrapper--message">
+                            <h2>Ah, Like Dirty Dishes</h2>
+                            <div class="full-width__promo__wrapper--message-story">
+                                <p>"All, we're really going this year", said Father. He patted the little plastic moosehead that hung on the wall by the fishing poles. Ralph looked up from a Cheever short story. Father's eyes shone with water and emotion, and he prayed out loud:</p>
+                                <p>"The Rock Bound Coast of Maine."</p>
+                                <p>"Oh no, Pop, not that again." Ralph pulled at his own short beard frustratedly.</p>
+                                <p>"Ah, this year I've decided, the whole family's going together."</p>
+                                <p>"But..."</p>
+                                <p>"No buts."</p>
+                                <p>Ralph went to mother, who was shucking peas in the sink. Suspendisse gravida tincidunt tortor in pharetra. Quisque nec metus ut ante viverra pulvinar. Duis semper ipsum at magna fermentum, a mollis quam pulvinar. Donec orci mauris, pretium at convallis vitae, finibus at nibh...</p>
+                            </div>
+                        </div>
+                        <!--Optional Button-->
+                        <a href="/" title="" class="btn btn--brown">... con't reading this story</a>
+                        <!--END Optional Button-->
+                    </div>
+                    <!--END Panel-->
+
+                </div>
+            </div>
+
+        </section>
+        <!--END Full Width Promo-->
+
+    </div>
+
+
+    <!--##########################################################################################-->
+
+    {{ page.footer }}
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="globalWidth">
+            <div class="footer-wrapper">
+
+                <!--Right Column-->
+                <div class="footer--right-column">
+                    <div class="footer--right-column--logo">
+                        <img src="assets/img/Logo-Blue.svg" alt="">
+                    </div>
+
+                    <div class="footer--right-column--content">
+
+                        <div class="footer--right-column--content-image">
+                            <img src="assets/img/Headshot.jpg" alt="">
+                        </div>
+
+                        <div class="footer--right-column--content-txt">
+                            <div class="footer--right-column--summary">Abbreviated Bio... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin orci tellus, ultrices consectetur purus id, condimentum lacinia mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam porta metus tortor, sed ullamcorper felis dignissim egestas. Aliquam et porta enim. Sed convallis, felis nec ornare rhoncus, ante dolor vehicula dui.</div>
+                            <div class="footer--right-column--meta">
+                                <a href="/" title="" class="btn btn--white btn-small">Contact Jan</a>
+                                <ul>
+                                    <li><a href="/" title=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="/" title=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    <li><a href="/" title=""><i class="fa-brands fa-x-twitter"></i></a></li>
+                                    <li><a href="/" title=""><i class="fa-brands fa-instagram"></i></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--END Right Column-->
+
+                <!--Left Column-->
+                <div class="footer--left-column">
+                    <div class="footer--left-column-wrapper">
+
+                        <!--Important Links-->
+                        <div class="footer--left-column-indColumn">
+                            <h4>Important Links</h4>
+                            <ul>
+                                <li><a href="/" title="">Lorem ipsum dolor sit</a></li>
+                                <li><a href="/" title="">Amet consectetur</a></li>
+                                <li><a href="/" title="">Etiam et dignissim elit</a></li>
+                                <li><a href="/" title="">Etiam lectus massa</a></li>
+                            </ul>
+                        </div>
+                        <!--END Important Links-->
+
+                        <!--Newsletter-->
+                        <div class="footer--left-column-indColumn">
+                            <h4>Email Newsletter</h4>
+                            <div>
+                                <p>Newsletter service API</p>
+                            </div>
+                        </div>
+                        <!--END Newsletter-->
+
+                    </div>
+                </div>
+                <!--END Left Column-->
+
+            </div>
+        </div>
+
+    </footer>
+    <!--END Footer-->
+
+
+</div>
+<!--END Page Content-->
+
+
+
+
