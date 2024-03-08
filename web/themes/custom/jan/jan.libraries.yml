@@ -22,6 +22,7 @@ custom-js:
     assets/js/vendor/viewport.min.js: {}
     assets/js/ui/effect.min.js: {}
     assets/js/vendor/headroom.js: {}
+    assets/js/custom/custom.js: {}
   dependencies:
     - core/jquery
 
