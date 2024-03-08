@@ -1,0 +1,220 @@
+// File Name: _home.scss
+// Description: 
+// Used by:
+// Dependencies: 
+// ------------------------------------------------------------
+
+
+
+//----------
+
+.home-page {
+  
+  main {
+    position:relative;
+    z-index:3;
+    background:$white;
+    padding-top:0;
+    padding-bottom:0;
+    box-shadow: 0px -6px 8px rgba(0, 0, 0, .2);
+    
+    @media only screen and (min-width: 1100px) {
+      margin-top:85vh;
+    }
+  }
+
+  .home-eyebrow {
+    flex: 0 0 70px;
+    position:relative;
+    margin-bottom: 10px;
+    @media only screen and (min-width: 1100px) {
+      margin-bottom: 0;
+      &:after{
+        border-left:2px solid $light-tan;
+        content:'';
+        display:block;
+        top:170px;
+        left:0px;
+        position:absolute;
+        height: calc(100% + 200px);
+        width:20px;
+      }
+    }
+    
+  }
+
+
+  .home-eyebrow--wrapper {
+    font-family:$font-family__primary;
+    color: $white;
+    font-weight: 600;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    @media only screen and (min-width: 1100px) {
+      text-align: right;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      text-orientation: mixed;
+      left: -3px;
+      position: relative;
+      z-index: 20;
+    }
+  }
+
+  .upper-content--wrapper {
+      display: flex;
+      flex-flow: wrap;
+    
+    @media only screen and (min-width: 820px) {
+      
+    }
+
+    @media only screen and (min-width: 1100px) {
+      align-items: center;
+    }
+  }
+
+  .home-content--left {
+    
+    flex: 0 0 100%;
+    order:2;
+    @media only screen and (min-width: 600px) {
+      flex: 0 0 50%;
+      order:1;
+    }
+    @media only screen and (min-width: 1100px) {
+      display: flex;
+      padding-bottom: 150px;
+    }
+  }
+  
+  .home-content--right {
+    flex: 0 0 100%;
+    order:1;
+    margin-bottom:50px;
+    @media only screen and (min-width: 600px) {
+      flex: 0 0 50%;
+      order:2;
+      margin-bottom:0;
+    }
+    @media only screen and (min-width: 820px) {
+      padding:0 0 0 40px;
+    }
+    @media only screen and (min-width: 1100px) {
+      padding:0;
+    }
+    img {
+      width: 100%;
+      max-width:300px;
+      height: auto;
+      position: relative;
+      right: 0;
+      @media only screen and (min-width: 600px) {
+        max-width: 100%;
+      }
+      
+      @media only screen and (min-width: 1100px) {
+        width: 120%;
+        max-width: 120%;
+        right: -10%;
+      }
+    }
+    
+  }
+
+
+
+  .testimonials-multiple-slider-panel {
+    background:$white;
+    padding:50px 0 120px;
+    @media only screen and (min-width: 820px) {
+      padding:100px 0 170px;
+    }
+    @media only screen and (min-width: 1100px) {
+      padding:0;
+    }
+  
+    h2 {
+      padding-left:0;
+      @media only screen and (min-width: 1100px) {
+        padding-left:7%;
+      }
+    }
+
+    .slide-wrap {
+      padding-left:0;
+      @media only screen and (min-width: 1100px) {
+        padding-left:7%;
+      }
+    }
+
+    @media only screen and (min-width: 1100px) {
+      .globalWidth {
+        padding: 150px 0 100px;
+        border-left:2px solid $light-tan;
+      }
+    }
+  }
+
+
+  .full-width__promo {
+    padding-top:50px;
+    padding-bottom: 50px;
+    background: #150A00;
+
+    @media only screen and (min-width: 820px) {
+      padding-top:0;
+      padding-bottom:0;
+    }
+
+    &__image {
+      display:none;
+      @media only screen and (min-width: 1100px) {
+        display:block;
+        opacity:.2;
+        mix-blend-mode: luminosity;
+      }
+    }
+
+    .full-width__promo__container {
+      margin-top:0;
+      @media only screen and (min-width: 820px) {
+        margin-left: 0;
+      }
+    }
+
+    @media only screen and (min-width: 1100px) {
+      .full-width__promo__container {
+        padding-top:0;
+      }
+      .full-width__promo__title {
+        padding: 0;
+      } 
+      .full-width__promo__wrapper {
+        margin-top:100px;
+      }
+    }
+
+    .full-width__promo__title-wrapper {
+      @media only screen and (min-width: 1100px) {
+        border-left: 2px solid $light-tan;
+        padding: 100px 14% 0;
+      }
+    }
+
+    h2 {
+      font-family:$font-family__serif;
+      font-style:italic;
+      font-size: 26px;
+      @media only screen and (min-width: 800px) {
+        font-size: 30px;
+      }
+      @media only screen and (min-width: 1100px) {
+        font-size: 48px;
+      }
+    }
+
+  }
+
+}

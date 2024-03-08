@@ -1,0 +1,103 @@
+/*
+----------------------
+Simple Promo / Featured Book
+----------------------
+*/
+
+.simple-promo_panel {
+  background:$gray__light;
+  padding:50px 0;
+  @media only screen and (min-width: 820px) {
+    padding:100px 0;
+  }
+
+  .simple-promo_wrapper {
+    display:block;
+    width:100%;
+    @media only screen and (min-width: 800px) {
+      display:flex;
+
+      .simple-promo_img-container {
+        order:2;
+      }
+
+      .simple-promo_txt-container {
+        order:1;
+      }
+
+      .simple-promo_txt-wrapper {
+        padding-right: 7%;
+      }
+    }
+
+  }
+
+  .simple-promo_img-container {
+    display:block;
+    width:100%;
+    position:relative;
+    margin-bottom:30px;
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
+    @media only screen and (min-width: 800px) {
+      flex: 0 0 30%;
+      max-width:30%;
+      margin-bottom:0;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .simple-promo_txt-container {
+    display:block;
+    width:100%;
+    @media only screen and (min-width: 800px) {
+      flex: 0 0 70%;
+      max-width:70%;
+      align-self: center;
+    }
+  }
+
+  .simple-promo_txt-wrapper {
+    @media only screen and (min-width: 800px) {
+    }
+    @media only screen and (min-width: 1100px) {
+    }
+  }
+
+  h2 {
+    margin-bottom:10px;
+    color:$dark;
+    font-family:$font-family__primary;
+    font-size:20px;
+    font-weight:600;
+    @media only screen and (min-width: 800px) {
+      font-size:24px;
+    }
+    @media only screen and (min-width: 1100px) {
+      font-size:30px;
+    }
+  }
+
+  .simple-promo_description {
+    line-height: 1.5;
+    font-size:16px;
+    font-weight:500;
+    font-family:$font-family__primary;
+    p {
+      &:last-of-type {
+        margin-bottom:0;
+      }
+    }
+  }
+
+  .btn {
+    margin-top:30px !important;
+  }
+  
+}

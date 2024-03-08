@@ -1,0 +1,35 @@
+// File Name: _admin.scss
+// Description: Admin and editor styles (fonts, pseudo elements, etc.)
+// Used by:
+// Dependencies:
+// ------------------------------------------------------------
+
+@charset "UTF-8";
+/* CSS Document */
+
+#toolbar-administration, #toolbar-administration * {
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.toolbar-tray a:hover,
+.toolbar-tray a:active,
+.toolbar-tray a:focus,
+.toolbar-tray a.is-active {
+    color: $brand-red;
+    text-decoration: none;
+}
+
+.admin-menu-local-tasks {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    background: #ffff;
+    padding: 20px 0;
+    border: 2px solid #e4e4e4;
+    li {
+        display: inline-block;
+        padding: 0 20px;
+    }
+}

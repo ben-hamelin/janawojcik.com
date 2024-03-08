@@ -1,0 +1,17 @@
+name: Drupal Starter Theme by Ben Hamelin
+description: A custom Drupal theme developed by Ben Hamelin. Drupal 8 or Drupal 9 ready.
+type: theme
+core_version_requirement: ^8 || ^9
+
+libraries:
+  - starter_theme/custom-css
+  - starter_theme/custom-js
+
+# Define regions
+regions:
+  header: 'Header'
+  content: 'Main content'
+  footer: 'Footer'
+
+libraries-override:
+  core/modernizr: false

@@ -1,0 +1,218 @@
+// File Name: _mixins.scss
+// Description: Sass mixins
+// Used by:
+// Dependencies:
+// ------------------------------------------------------------
+
+
+@mixin fa-5-light {
+  font-family: $font-family__fa-5;
+  font-style: normal;
+  font-weight: 300 !important;
+}
+
+@mixin fa-5-solid {
+  font-family: $font-family__fa-5;
+  font-style: normal;
+  font-weight: 900 !important;
+}
+
+@mixin fa-5-brands {
+  font-family: $font-family__fa-5;
+  font-style: normal;
+  font-weight: 400 !important;
+}
+
+@mixin material-google {
+  font-family: 'Material Icons';
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+@mixin obj-left {
+  margin-bottom: 30px;
+  img {
+    width:100%;
+    height:auto;
+  }
+  @media only screen and (min-width: 800px) {
+    margin: 0;
+    float: left;
+    padding: 10px 35px 10px 0px;
+    figcaption {
+      padding: 0px 15px 30px 0px;
+    }
+  }
+}
+
+@mixin obj-right {
+  margin-bottom: 30px;
+  img {
+    width:100%;
+    height:auto;
+  }
+  @media only screen and (min-width: 800px) {
+    float: right;
+    padding: 10px 0px 10px 35px;
+    margin: 0;
+    figcaption {
+      padding: 0px 0px 30px 35px;
+    }
+  }
+}
+
+@mixin obj-center {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  img {
+    width:100%;
+    height:auto;
+  }
+}
+
+@mixin obj-full-width {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  img {
+    width:100%;
+    max-width:100%;
+    height:auto;
+  }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Image Mixins
+// - Responsive image
+// - Retina image
+
+
+// Responsive image
+//
+// Keep images from scaling beyond the width of their parents.
+
+@mixin img-fluid {
+  // Part 1: Set a maximum relative to the parent
+  max-width: 100%;
+  // Part 2: Override the height to auto, otherwise images will be stretched
+  // when setting a width and height attribute on the img element.
+  height: auto;
+}
+
+
+// Retina image
+//
+// Short retina mixin for setting background-image and -size.
+
+// stylelint-disable indentation, media-query-list-comma-newline-after
+@mixin img-retina($file-1x, $file-2x, $width-1x, $height-1x) {
+  background-image: url($file-1x);
+
+  // Autoprefixer takes care of adding -webkit-min-device-pixel-ratio and -o-min-device-pixel-ratio,
+  // but doesn't convert dppx=>dpi.
+  // There's no such thing as unprefixed min-device-pixel-ratio since it's nonstandard.
+  // Compatibility info: https://caniuse.com/#feat=css-media-resolution
+  @media only screen and (min-resolution: 192dpi), // IE9-11 don't support dppx
+  only screen and (min-resolution: 2dppx) { // Standardized
+    background-image: url($file-2x);
+    background-size: $width-1x $height-1x;
+  }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Only display content to screen readers
+// See: http://a11yproject.com/posts/how-to-hide-content/
+// See: https://hugogiraudel.com/2016/10/13/css-hide-and-seek/
+
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+// Use in conjunction with .sr-only to only display content when it's focused.
+// Useful for "Skip to main content" links; see https://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+// Credit: HTML5 Boilerplate
+
+@mixin sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    clip-path: none;
+  }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Text truncate
+// Requires inline-block or block for proper styling
+
+@mixin text-truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// .no-touch should be applied to the `html` or `body` elements with Modernizr or other script.
+// https://craigmdennis.com/articles/add-hover-styles-for-non-touch-devices-with-sass/
+
+@mixin hover {
+  .no-touchevents & {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Border Radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+

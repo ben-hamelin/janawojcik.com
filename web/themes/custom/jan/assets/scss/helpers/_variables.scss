@@ -1,0 +1,75 @@
+// File Name: _variables.scss
+// Description: Sass variables, including fonts, weights, and colors
+// Used by:
+// Dependencies:
+// ------------------------------------------------------------
+
+
+// Fonts
+
+$font-family__primary               : "Montserrat", sans-serif; // 300,300i,400,400i,700,700i,900,900i //
+$font-family__primary-condensed     : "Montserrat", sans-serif; // 400,700 //
+
+//*******//
+
+$font-family__san-serif             : "Source Sans 3", sans-serif; // 300,300i,400,400i,700,700i,900,900i //
+$font-family__serif                 : "Source Serif 4", serif; // 300,300i //
+$font-family__highlight             : "Montserrat", sans-serif; // 300,300i,400,400i,700,700i,900,900i //
+
+//*******//
+
+$font-family__fa-5                  : 'Font Awesome 6 Pro'; // 
+
+//*******//
+
+// Colors
+
+
+$gray__line:               #E4E4E4;
+$color__primary:           #222222;
+
+$black:                    #000000;
+$dark:                     #111111;
+$medium:                   #666666;
+
+$brand-red:                #c41230;   
+$brand-red__alt:           #9c011b;
+$brand-red__dark:          #500310;
+$brand-red__background:    #661201;
+
+$gray__dark:               #505050;
+$gray__medium:             #777777;
+$gray__light:              #F8F8F8;
+$gray__xtra-light:         #F4F4F4;
+
+$gray__text__background:   #AAAAAA;
+$gray__background:         #222328;
+
+$brand-blue:               #1C3664;
+$brand-green:              #073B23;
+$brand-bright-green:       #9AEB93;
+$brand-light-green:        #F1F6E6;
+
+$brand-medium-blue:        #6C7FA1;
+$brand-light-blue:         #9CB8EB;
+
+$brand-medium-grey:        #e4e4e4;
+$brand-light-grey:         #f4f4f4;
+
+$cream:                    #fffff6;
+$cream-border:             #e3e3cf;
+
+$white:                    #FFFFFF;
+
+$light-tan:                #EFDFA4;
+$steel-blue:               #005985;
+$steel-blue-light:         #A9C2CC;
+$steel-blue-xlight:        #7BAEC3;
+$steel-blue-dark:          #041922;
+$dark-brown:               #150A00;
+$medium-brown:             #552900;
+
+// Transitions
+$all: all .3s ease-in-out;
+$all--slow: all .35s ease-in-out;
+$all--x_slow: all .4s cubic-bezier(0.700, -0.005, 0.185, 1.000);

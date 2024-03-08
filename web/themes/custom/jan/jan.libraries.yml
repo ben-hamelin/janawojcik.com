@@ -1,0 +1,26 @@
+custom-css:
+  version: 1.x
+  css:
+    theme:
+      css/custom/custom.css: {}
+      css/custom/developer-overrides.css: {}
+
+custom-js:
+  version: 1.x
+  js:
+    js/custom/custom.js: {}
+  dependencies:
+    - core/jquery
+
+# example of an external library include
+# to load it, the following would need to be in .info.yml under libraries:
+# - starter_theme/googlefonts
+# googlefonts:
+#  version: 1.0
+#  license:
+#    name: google fonts
+#    url: https://www.google.com/fonts#AboutPlace:about
+#    gpl-compatible: true
+#  css:
+#    base:
+#      https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700: {}

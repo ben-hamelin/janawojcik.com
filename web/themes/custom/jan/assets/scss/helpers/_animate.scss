@@ -1,0 +1,89 @@
+// ---------------------------
+// ANIMATE JS
+// This file is only to contain optional overrides to existing components for animation
+// ---------------------------
+$baseline: .6s;
+$fast: .4s;
+$slow: 1.2s;
+
+.fade-in.sequence-anim-item {
+	transition: opacity $fast ease;
+	opacity: 0;
+	&.sequence-anim-item--active {
+		opacity: 1;
+	}
+}
+
+.fade-up-in.sequence-anim-item {
+	transition: transform $slow ease, opacity $baseline ease;
+	transform: translateY(1rem);
+	opacity: 0;
+	&.sequence-anim-item--active {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+.fade-slide-from-left.sequence-anim-item {
+	transition: transform $slow ease, opacity $baseline ease;
+	transform: translateX(-1rem);
+	opacity: 0;
+	&.sequence-anim-item--active {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+// ----- pop in
+@keyframes pop-in {
+	0% {
+		transform: scale(.95);
+		opacity: 0;		
+	}
+	33.3333% {
+		transform: scale(1.03);		
+	}
+	66.6666% {
+		transform: scale(.98);
+	}
+	100% {
+		transform: none;
+		opacity: 1;
+	}
+}
+.pop-in.sequence-anim-item {
+	transform: scale(.8);
+	opacity: 0;
+  	animation-duration: .9s;
+  	animation-iteration-count: 1;
+  	animation-timing-function: ease;
+	&.sequence-anim-item--active {
+		animation-name: pop-in;
+		transform: none;
+		opacity: 1;
+	}
+}
+
+// ----- pop in
+@keyframes pop-in-small {
+	0% {
+		transform: scale(.97);
+		opacity: 0;		
+	}
+	100% {
+		transform: none;
+		opacity: 1;
+	}
+}
+.pop-in-small.sequence-anim-item {
+	transform: scale(.97);
+	opacity: 0;
+  	animation-duration: .8s;
+  	animation-iteration-count: 1;
+  	animation-timing-function: ease;
+	&.sequence-anim-item--active {
+		animation-name: pop-in-small;
+		transform: none;
+		opacity: 1;
+	}
+}

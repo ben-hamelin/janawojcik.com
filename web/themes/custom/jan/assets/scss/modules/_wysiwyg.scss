@@ -1,0 +1,239 @@
+// File Name: _wysiwyg.scss
+// Description: 
+// Used by:
+// Dependencies: 
+// ------------------------------------------------------------
+
+
+.content-region--general,
+.modular-wysiwyg__cols {
+  .wysiwyg {
+    margin-bottom:-30px;
+    
+    img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    h2 {
+      font-family:$font-family__primary;
+      font-size:30px;
+      font-weight:600;
+      margin-bottom:0;
+      color:$dark;
+      margin-bottom:20px;
+      @media only screen and (min-width: 800px) {
+        font-size:33px;
+      }
+      @media only screen and (min-width: 1100px) {
+        font-size:40px;
+      }
+    }
+
+    h3 {
+      font-family: $font-family__primary;
+      font-size:20px;
+      font-weight:600;
+      color:$dark;
+    }
+
+    a {
+      font-weight: 600;
+      text-underline-offset: 3px;
+    }
+
+    a.btn {
+      margin-top:0;
+    }
+
+    hr {
+      background: $light-tan;
+    }
+
+    blockquote {
+      font-family:$font-family__serif;
+      font-size:20px;
+      font-style:italic;
+      border-left: 10px solid $light-tan;
+      padding-left: 30px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      @media only screen and (min-width: 800px) {
+        font-size:30px;
+      }
+    }
+
+    .quotee {
+      font-family:$font-family__san-serif;
+      font-size:14px;
+      font-style:normal;
+      font-weight:700;
+    }
+
+    .body-intro {
+      font-family:$font-family__serif;
+      font-size:20px;
+      line-height:160%;
+
+      @media only screen and (min-width: 900px) {
+        font-size:24px;
+        line-height:180%;
+      }
+    }
+
+    ul {
+      list-style: disc;
+      margin: 0 0 30px 20px;
+    }
+
+    p + p.quotee {
+      margin-top: -30px;
+    }
+
+    .mobile-table-wrapper,
+    .table-container {
+      @media only screen and (max-width: 799px) {
+        overflow-x: auto;
+        margin-right: -7%;
+        margin-bottom: 40px;
+      }
+    }
+
+    table {
+      margin-bottom: 40px;
+      border-collapse: collapse;
+      border-top: 1px solid $steel-blue-light;
+      width:100%;
+      line-height: 1.1;
+      font-size:14px;
+      background:$white;
+      @media only screen and (min-width: 800px) {
+        font-size:16px;
+      }
+      @media only screen and (max-width: 799px) {
+        max-width: max-content;
+        margin-bottom: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+    
+    thead,
+    tbody {
+      vertical-align: top;
+    }
+    
+    thead {
+      color: $dark;
+      border-right: 1px solid $steel-blue-light;
+      border-left: 1px solid $steel-blue-light;
+    
+      th {
+        background: $steel-blue-dark;
+        color:$white;
+      }
+    }
+    
+    tbody {
+      border-top: 0;
+      border-left: 1px solid $steel-blue-light;
+    }
+    
+    tr {
+      border-bottom: 1px solid $steel-blue-light;
+    }
+    
+    th {
+      padding: 1em 1.25em;
+      border-right: 1px solid $steel-blue-light;
+      border-bottom: 0;
+      background: #f7f7f7;
+      font-weight: 700;
+    }
+    
+    td {
+      padding: 1em 1.25em;
+      border-right: 1px solid $steel-blue-light;
+    }
+
+    .align-left, .obj-left {
+      @media only screen and (min-width: 1100px) {
+        float: left;
+        margin: 10px 30px 30px 0;
+      }
+      
+    }
+    .align-right, .obj-right {
+      @media only screen and (min-width: 1100px) {
+        float: right;
+        margin: 10px 0 30px 30px;
+      }
+    }
+
+  }
+  div.accordion + div.wysiwyg,
+  div.promoset-nested + div.wysiwyg {
+    margin-top:30px;
+    @media only screen and (min-width: 1100px) {
+      margin-top:60px;
+    }
+  }
+}
+
+.wysiwyg + .form-section {
+  padding-top:40px;
+}
+
+.modular-wysiwyg {
+  background:$white;
+  padding: 50px 0 20px;
+  @media only screen and (min-width: 900px) {
+    padding: 100px 0 70px;
+  }
+}
+
+.component-gradient-container > .modular-wysiwyg {
+  padding: 50px 0 20px;
+  @media only screen and (min-width: 900px) {
+    padding: 100px 0 70px;
+  }
+}
+
+.component-gradient-container > .modular-wysiwyg:first-child {
+  padding: 0 0 20px;
+  @media only screen and (min-width: 900px) {
+    padding: 0 0 70px;
+  }
+}
+
+.modular-wysiwyg__cols {
+  display: flex;
+  flex-wrap: wrap;
+  @media only screen and (min-width: 1100px) {
+    gap: 7%;
+    //padding-left: 7%;
+  }
+
+  .modular-wysiwyg__cols-main {
+    flex: 0 0 100%;
+    line-height: 1.8;
+    @media only screen and (min-width: 1000px) {
+      flex: 1;
+      max-width: 900px;
+    }
+  }
+
+  .modular-wysiwyg__cols-callout {
+    flex: 0 0 100%;
+    @media only screen and (min-width: 1100px) {
+      flex: 0 0 33.333%;
+      max-width: 250px;
+    }
+  }
+
+}
+
+.modular-wysiwyg__cols .sidebar-promobox {
+  margin-bottom: 30px;
+}

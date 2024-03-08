@@ -1,0 +1,171 @@
+// File Name: _header.scss
+// Description: General global header navigation styles
+// Used by:
+// Dependencies:
+// ------------------------------------------------------------
+
+
+/* ======================================================= */
+/*   HEADER/MAIN NAVIGATION                                */
+/* ======================================================= */	
+
+  header {
+    position: relative;
+    //position: absolute;
+    top:0;
+    width:100%;
+    z-index:1000;
+    @media only screen and (max-width: 1199px) {
+      background:#0E0905;
+    }
+  }
+
+  .navigation {
+    width: 100%;
+    line-height: 0;
+    clear:both;
+  }
+
+  /*Logo*/
+  .headerLogo {
+    display: inline-block;
+    padding: 20px 0;
+    line-height: 0;
+    transition: all .2s ease-in-out;
+
+    a {
+     display: inline-block;
+      opacity: 1;
+      transition: all .2s ease-in-out;
+      &:hover {
+        opacity:.6;
+      }
+    }
+
+    .logo-large {
+      display:none;
+      @media only screen and (min-width: 1200px) {
+        display: block;
+        width: 140px;
+        height: auto;
+      }
+    }
+
+    .logo-small {
+      display: block;
+      width:100px;
+      height: auto;
+      @media only screen and (min-width: 1200px) {
+        display:none;
+      }
+    }
+  }
+
+  
+/* ======================================================= */
+/*   MEDIA QUERIES                                         */
+/* ======================================================= */	
+  
+  
+  @media all and (min-width: 1200px) {
+  
+    /*Header*/   
+    header {
+      width:100%;
+      position:fixed; 
+      top:0;
+    }
+
+    .headroom {
+      will-change: transform;
+      transition: transform 300ms linear;
+    }
+    .headroom--pinned {
+      transform: translateY(0%);
+      background: rgba(0, 0, 0, .8);
+      .navigation__lower__bar {
+        padding:20px 0;
+      }
+      .headerLogo {
+        flex: 0 0 140px;
+      }
+    }
+    .headroom--unpinned {
+      transform: translateY(-100%);
+      .navigation__lower__bar {
+        padding:30px 0;
+      }
+      .headerLogo {
+        flex: 0 0 140px;
+      }
+    }
+    .headroom--not-top {
+      background: rgba(0, 0, 0, .8);
+      .navigation__lower__bar {
+        padding:20px 0;
+      }
+      .headerLogo {
+        flex: 0 0 140px;
+      }
+    }
+    .headroom--top {
+      background: rgba(0, 0, 0, 0);
+      .navigation__lower__bar {
+        padding:50px 0;
+      }
+      .headerLogo {
+        flex: 0 0 186px;
+      }
+    }
+
+    /*********************/
+    
+    .header-spacer {
+      display: flex;
+      align-items: flex-end;
+      align-items: center;
+    }
+
+    .menuContainer-wrapper {
+      display:flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: flex-end;
+      line-height:1;
+    }
+
+    .navigation__lower__bar {
+      padding:40px 0;
+      transition: all .2s ease-in-out;
+    }
+
+    .adwMenu {
+      order:2;
+    }
+
+    /*Logo*/ 
+    .headerLogo {
+      padding: 0;
+      flex: 0 0 196px;
+      transition: all .2s ease-in-out;
+      img {
+        width: 100%;
+        max-width:100%;
+        height:auto;
+      }
+    }
+
+    /*********************/ 
+
+    nav#mainMenu.menuContainer {
+      position: relative;
+      flex: 1;
+      text-align: right;
+    }
+
+    nav#mainMenu ul.adwMenu > li ul li ul,
+    nav#mainMenu ul.adwMenu > li ul li span.openChild {
+      display: none;
+    }
+    
+  }
