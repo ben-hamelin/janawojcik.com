@@ -82,11 +82,15 @@
 
                     <h1>{{ label }}</h1>
                     <div class="intro">{{ content.field_intro }}</div>
-
-                    <div class="optional-btns">
-                        <a class="btn" href="/" title="">Optional Button</a>
-                        <a class="btn btn--reverse" href="/" title="">Purchase the Book</a>
+                    <!--Listing Detail Meta-->
+                    <div class="listing__detail-info">
+                        <div class="listing__ind-info">
+                            <div class="listing__ind-info--wrapper">
+                                <div class="listing-meta listing__ind-info--date">{{ node.getCreatedTime()|date('M d Y')  }}</div>
+                            </div>
+                        </div>
                     </div>
+                    <!--END Listing Detail Meta-->
 
                 </div>
             </div>

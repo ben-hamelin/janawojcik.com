@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_intro
     - field.field.node.page.field_view
     - node.type.page
   module:
@@ -21,6 +22,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_intro:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
     region: content
   field_view:
     type: viewsreference_formatter

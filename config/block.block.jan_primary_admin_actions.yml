@@ -1,6 +1,6 @@
 uuid: 7256211b-bbf5-471b-bcab-ec1aa65dd63c
 langcode: en
-status: true
+status: false
 dependencies:
   theme:
     - jan

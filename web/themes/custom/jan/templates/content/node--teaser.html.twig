@@ -70,7 +70,7 @@
 <!--Ind Listing Item-->
 <div class="listing__ind">
     <h2>{{ label }}</h2>
-    <div class="listing__ind-content"><p>{{ content|render|striptags }}</p></div>
+    <div class="listing__ind-content"><p>{{ content.body|render|striptags }}</p></div>
     <div class="listing__ind-info">
         <div class="listing__ind-info--wrapper">
             <div class="listing-meta listing__ind-info--date">{{ date }}</div>
