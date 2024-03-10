@@ -1,19 +1,19 @@
-uuid: a99e07cd-03f2-4ce8-9c3a-e75f2463330e
+uuid: a9786b8d-b5a9-4b3f-b3d1-eb1eac49baa8
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.account
   module:
     - system
   theme:
-    - mahi
+    - jan
 _core:
   default_config_hash: pAsVNVW3wfmOiG7r80ef-UbrXu5ql7TrXJIWDhjoMrA
-id: mahi_account_menu
-theme: mahi
-region: hidden_blocks
-weight: -12
+id: jan_account_menu
+theme: jan
+region: header
+weight: -6
 provider: null
 plugin: 'system_menu_block:account'
 settings:

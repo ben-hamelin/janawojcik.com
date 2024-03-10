@@ -46,118 +46,9 @@
 
 
 {# example of include #}
-{% include directory ~ '/includes/include.twig' %}
+{% include directory ~ '/includes/search.html.twig' %}
 
-
-<!--Search Panel-->
-<div id="searchFormModulePanel" class="searchFormPanelContainer">
-    <div class="searchFormPanelInnerContainer">
-        <div class="searchFormPanelWrapper">
-            <div class="searchFormPanelInnerWrapper">
-                <div class="searchFormPanelTxtContainer">
-                    <div class="searchFormPanelTitle">Looking for something?</div>
-                    <div class="searchFormPanelTeaser">Search here to find what you ....... </div>
-                </div>
-                <div class="searchFormPanelFormContainer">
-                    <form action=" " method="post" id="search" accept-charset="UTF-8">
-                        <div>
-                            <div class="searchFormPanelSearchField">
-                                <input title="Enter the terms you wish to search for." placeholder="search term" type="text" id="" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
-                            </div>
-                            <input type="hidden" name="" value="" />
-                            <input type="hidden" name="form_id" value="search_block_form" />
-                            <div class="searchFormPanelButtonWrappers">
-                                <input class="searchSubmit form-submit" type="submit" id="edit-submit" name="op" value="Search" />
-                                <a href="#search_link" class="searchPanel_close" title="Close form">
-                                    <span class="sr-only">Close form</span>
-                                    <i class="fas fa-window-close"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="errorContainer"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--END Search Panel-->
-
-
-<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-
-
-<!--Header-->
-<header id="header" class="cf">
-    <div class="navigation">
-
-        <div class="navigation__lower__bar">
-            <div class="globalWidth header-spacer">
-
-                <div class="headerLogo">
-                    <a href="/" title="" class="header__addy__logo">
-                        <img src="/{{ directory }}/assets/img/Logo-Rev.svg" alt="" class="logo-large">
-                        <img src="/{{ directory }}/assets/img/Logo-Rev.svg" class="logo-small" alt="">
-                    </a>
-                </div>
-
-                <div class="mobileBtnWrapper">
-                    <div class="mobileBtnWrapper__icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-
-                <nav id="mainMenu" role="navigation" class="menuContainer">
-
-                    <div class="menuContainer-wrapper">
-                        <!--Main Nav-->
-                        <ul class="adwMenu">
-
-                            <li class="tierMenu empty">
-                                <a href="#" tabindex="0" title="">about Jan</a>
-                            </li>
-
-                            <li class="tierMenu empty">
-                                <a href="#" tabindex="0" title="">the Books</a>
-                            </li>
-
-                            <li class="tierMenu empty">
-                                <a href="#" tabindex="0" title="">published Stories</a>
-                            </li>
-
-                            <li class="tierMenu empty">
-                                <a href="#" tabindex="0" title="">gallery</a>
-                            </li>
-
-                            <li class="tierMenu empty">
-                                <a href="#" tabindex="0">contact</a>
-                            </li>
-
-                        </ul>
-                        <!--END Main Nav-->
-                    </div>
-
-                </nav>
-
-                <!--Search-->
-                <div class="nav-search">
-                    <a href="JavaScript:Void(0);" title="Site Search"  class="searchPanel_open">
-                        <i class="fas fa-search"></i>
-                    </a>
-                </div>
-                <!--END Search-->
-
-            </div>
-        </div>
-
-    </div>
-</header>
-<!--END Header-->
+{{ page.header }}
 
 
 <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
@@ -165,12 +56,6 @@
 
 <!--Page Content-->
 <div class="page-wrapper">
-
-    {{ page.help }}
-
-    {{ page.highlighted }}
-
-    {{ page.content }}
 
     <main id="main-content" role="main">
 
@@ -197,6 +82,9 @@
                                 </div>
 
                                 <div class="home-content--left-inner">
+
+                                    {{ page.content }}
+
                                     <h1>Grateful for the Time We Had</h1>
                                     <div class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin orci tellus, ultrices consectetur purus id, condimentum lacinia mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam porta metus tortor, sed ullamcorper felis dignissim egestas.</div>
                                     <!--Optional Btns-->
@@ -343,77 +231,6 @@
     <!--##########################################################################################-->
 
     {{ page.footer }}
-
-    <!--Footer-->
-    <footer class="footer">
-        <div class="globalWidth">
-            <div class="footer-wrapper">
-
-                <!--Right Column-->
-                <div class="footer--right-column">
-                    <div class="footer--right-column--logo">
-                        <img src="/{{ directory }}/assets/img/Logo-Blue.svg" alt="">
-                    </div>
-
-                    <div class="footer--right-column--content">
-
-                        <div class="footer--right-column--content-image">
-                            <img src="/{{ directory }}/assets/img/Headshot.jpg" alt="">
-                        </div>
-
-                        <div class="footer--right-column--content-txt">
-                            <div class="footer--right-column--summary">Abbreviated Bio... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin orci tellus, ultrices consectetur purus id, condimentum lacinia mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam porta metus tortor, sed ullamcorper felis dignissim egestas. Aliquam et porta enim. Sed convallis, felis nec ornare rhoncus, ante dolor vehicula dui.</div>
-                            <div class="footer--right-column--meta">
-                                <a href="/" title="" class="btn btn--white btn-small">Contact Jan</a>
-                                <ul>
-                                    <li><a href="/" title=""><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="/" title=""><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="/" title=""><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="/" title=""><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-                <!--END Right Column-->
-
-                <!--Left Column-->
-                <div class="footer--left-column">
-                    <div class="footer--left-column-wrapper">
-
-                        <!--Important Links-->
-                        <div class="footer--left-column-indColumn">
-                            <h4>Important Links</h4>
-                            <ul>
-                                <li><a href="/" title="">Lorem ipsum dolor sit</a></li>
-                                <li><a href="/" title="">Amet consectetur</a></li>
-                                <li><a href="/" title="">Etiam et dignissim elit</a></li>
-                                <li><a href="/" title="">Etiam lectus massa</a></li>
-                            </ul>
-                        </div>
-                        <!--END Important Links-->
-
-                        <!--Newsletter-->
-                        <div class="footer--left-column-indColumn">
-                            <h4>Email Newsletter</h4>
-                            <div>
-                                <p>Newsletter service API</p>
-                            </div>
-                        </div>
-                        <!--END Newsletter-->
-
-                    </div>
-                </div>
-                <!--END Left Column-->
-
-            </div>
-        </div>
-
-    </footer>
-    <!--END Footer-->
 
 
 </div>

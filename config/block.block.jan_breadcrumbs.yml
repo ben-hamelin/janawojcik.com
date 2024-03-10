@@ -1,17 +1,17 @@
-uuid: 773d4581-b4f9-4382-be5f-a1e94b6309d1
+uuid: b2de97a0-7eac-41b0-bb78-a3fc13ce1cd1
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
   theme:
-    - mahi
+    - jan
 _core:
   default_config_hash: E7ZFXXrrN9ZTeE2myhyEjYge1XXRgTPXN9a5c8KoyrM
-id: mahi_breadcrumbs
-theme: mahi
-region: page_header
-weight: -12
+id: jan_breadcrumbs
+theme: jan
+region: content
+weight: -6
 provider: null
 plugin: system_breadcrumb_block
 settings:

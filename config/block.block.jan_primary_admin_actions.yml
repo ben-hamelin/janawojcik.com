@@ -1,15 +1,15 @@
-uuid: 9f3034ab-d53e-4ee9-ada6-548261b4dccf
+uuid: 7256211b-bbf5-471b-bcab-ec1aa65dd63c
 langcode: en
 status: true
 dependencies:
   theme:
-    - mahi
+    - jan
 _core:
   default_config_hash: bxfUm8OiHyh66yCgvAPPb1uVzcEDmaptB9Wr4_iwayY
-id: mahi_primary_admin_actions
-theme: mahi
+id: jan_primary_admin_actions
+theme: jan
 region: content
-weight: -13
+weight: -4
 provider: null
 plugin: local_actions_block
 settings:

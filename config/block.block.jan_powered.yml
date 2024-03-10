@@ -1,17 +1,17 @@
-uuid: e95a0c17-afd7-4207-8085-9b2d951720e1
+uuid: abbd3a0b-ad6f-4a0a-b991-17654e168039
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
   theme:
-    - mahi
+    - jan
 _core:
   default_config_hash: V9UXsAvkCs7smSITh8JQxBok2w1J2sij-DuV24kjl3s
-id: mahi_powered
-theme: mahi
-region: hidden_blocks
-weight: -13
+id: jan_powered
+theme: jan
+region: header
+weight: -3
 provider: null
 plugin: system_powered_by_block
 settings:

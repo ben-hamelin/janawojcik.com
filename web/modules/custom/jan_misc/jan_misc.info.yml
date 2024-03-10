@@ -1,0 +1,6 @@
+name: Miscellaneous Custom Stuff
+description: Perform common tasks.
+package: Custom
+
+type: module
+core_version_requirement: ">=9"

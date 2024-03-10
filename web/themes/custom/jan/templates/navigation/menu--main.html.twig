@@ -20,29 +20,31 @@
 #}
 {% import _self as menus %}
 {% set theme_directory = directory %}
+{%
+    set classes = [
+    'tierMenu',
+    'empty',
+]
+%}
 {#
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
 {{ menus.menu_links(items, attributes, 0, theme_directory) }}
-
+<!--Main Nav-->
 {% macro menu_links(items, attributes, menu_level, directory) %}
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul class="first-tier">
+      <ul class="adwMenu">
     {% else %}
       <ul class="second-tier">
     {% endif %}
     {% for item in items %}
 
-      <li{{ item.attributes }}>
+      <li{{ item.attributes.addClass(classes) }}>
         {% if menu_level == 0 %}
           {% if item.below %}
-            <a href="javascript:void(0);" class="main-menu-dropdown-toggle"><span class="menu-label">{{ item.title }}</span></a>
-           <div class="main-menu-dropdown">
-             <div class="main-menu-dropdown-links-promo-container">
-              <div class="main-menu-dropdown-links">
                 {{ menus.menu_links(item.below, attributes, menu_level + 1,directory) }}
           {% else %}
             {{ link(item.title, item.url) }}
@@ -50,17 +52,10 @@
           {% else %}
             {{ link(item.title, item.url) }}
         {% endif %}
-        {% if menu_level == 0 %}
-          {% if item.below %}
-            </div> <!-- end .main-menu-dropdown-links -->
-
-             </div>
-           </div>
-            {% endif %}
-          {% endif %}
       </li>
     {% endfor %}
     </ul>
 
   {% endif %}
 {% endmacro %}
+<!--END Main Nav-->

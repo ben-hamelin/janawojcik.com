@@ -209,24 +209,14 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  page_1:
-    id: page_1
-    display_title: Blog
-    display_plugin: page
+  block_1:
+    id: block_1
+    display_title: Block
+    display_plugin: block
     position: 1
     display_options:
       display_description: ''
       display_extenders: {  }
-      path: blog
-      menu:
-        type: normal
-        title: Blog
-        description: ''
-        weight: -48
-        expanded: false
-        menu_name: main
-        parent: ''
-        context: '0'
     cache_metadata:
       max-age: -1
       contexts:

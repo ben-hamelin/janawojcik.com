@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a header region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region div.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{% set attributes = attributes.addClass('clearfix') %}
+
+
+
+<!--Header-->
+<header id="header" class="cf">
+    <div class="navigation">
+
+        <div class="navigation__lower__bar">
+            <div class="globalWidth header-spacer">
+
+                <div class="headerLogo">
+                    <a href="/" title="" class="header__addy__logo">
+                        <img src="/{{ directory }}/assets/img/Logo-Rev.svg" alt="" class="logo-large">
+                        <img src="/{{ directory }}/assets/img/Logo-Rev.svg" class="logo-small" alt="">
+                    </a>
+                </div>
+
+                <div class="mobileBtnWrapper">
+                    <div class="mobileBtnWrapper__icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <nav id="mainMenu" role="navigation" class="menuContainer">
+
+                    <div class="menuContainer-wrapper">
+                       {{ content }}
+                    </div>
+
+                </nav>
+
+                <!--Search-->
+                <div class="nav-search">
+                    <a href="JavaScript:Void(0);" title="Site Search"  class="searchPanel_open">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+                <!--END Search-->
+
+            </div>
+        </div>
+
+    </div>
+</header>
+<!--END Header-->

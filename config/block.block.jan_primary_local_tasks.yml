@@ -1,15 +1,15 @@
-uuid: f12005c8-11c7-43fa-ba2c-d1d3d5983ffe
+uuid: daa4bc03-6a21-4d75-a1f2-31773267dd6e
 langcode: en
 status: true
 dependencies:
   theme:
-    - mahi
+    - jan
 _core:
   default_config_hash: dVXNe1IMzNakM6XQ6x1Iku6tj2LTd_xSoEmijNhFUjg
-id: mahi_primary_local_tasks
-theme: mahi
+id: jan_primary_local_tasks
+theme: jan
 region: content
-weight: -12
+weight: -3
 provider: null
 plugin: local_tasks_block
 settings:

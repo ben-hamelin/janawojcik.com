@@ -6,15 +6,8 @@ dependencies:
     - field.field.node.article.body
     - node.type.article
   module:
-    - field_layout
-    - layout_discovery
     - path
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.article.default
 targetEntityType: node
 bundle: article

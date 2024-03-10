@@ -1,17 +1,17 @@
-uuid: 69f2c0ee-4234-4e6d-8bfe-41965e26e847
+uuid: 51bfb4dc-6d0c-4b75-8e0b-580ee6686204
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - node
   theme:
-    - mahi
+    - jan
 _core:
   default_config_hash: XFLzKtO_HTDRL1UYMS83JF3BZlklmIinMCBJaurXdEY
-id: mahi_syndicate
-theme: mahi
-region: hidden_blocks
-weight: -11
+id: jan_syndicate
+theme: jan
+region: header
+weight: -5
 provider: null
 plugin: node_syndicate_block
 settings:

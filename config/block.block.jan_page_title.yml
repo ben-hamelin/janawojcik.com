@@ -1,15 +1,15 @@
-uuid: ecdd7bab-abe3-43f6-90f2-342124264a7e
+uuid: 2ae5549d-cc3c-44db-8909-1bd21e709fe9
 langcode: en
-status: true
+status: false
 dependencies:
   theme:
-    - mahi
+    - jan
 _core:
   default_config_hash: cRYQm774QG7qaYT0wk4ptn-GMhoe4ErDyexgsj4TKfQ
-id: mahi_page_title
-theme: mahi
-region: page_header
-weight: -13
+id: jan_page_title
+theme: jan
+region: content
+weight: -5
 provider: null
 plugin: page_title_block
 settings:

@@ -1,16 +1,16 @@
-uuid: 1e044ed0-2a76-4aef-a4f0-a238ed778ce7
+uuid: 9e1dcc26-9282-4cf9-98ec-0dd2181f924c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.article.body
-    - node.type.article
+    - field.field.node.home.body
+    - node.type.home
   module:
     - text
     - user
-id: node.article.default
+id: node.home.default
 targetEntityType: node
-bundle: article
+bundle: home
 mode: default
 content:
   body:

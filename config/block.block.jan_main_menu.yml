@@ -1,4 +1,4 @@
-uuid: c0005021-2a3f-40b9-b6ff-1198f6fbfa96
+uuid: b063f443-c9fa-44a4-9357-c05caa2cbc74
 langcode: en
 status: true
 dependencies:
@@ -7,13 +7,13 @@ dependencies:
   module:
     - system
   theme:
-    - mahi
+    - jan
 _core:
   default_config_hash: gc42M-jgw5dDfV73xZrNTQdNhX6ol9H4yKnnYdzkXGs
-id: mahi_main_menu
-theme: mahi
-region: primary_menu
-weight: 0
+id: jan_main_menu
+theme: jan
+region: header
+weight: -7
 provider: null
 plugin: 'system_menu_block:main'
 settings:

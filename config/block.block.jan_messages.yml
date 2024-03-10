@@ -1,17 +1,17 @@
-uuid: 5ffa9338-9b8a-40b1-bce6-8972a0733cc1
+uuid: 17097667-7b1c-464d-ae06-619e36ca9b8f
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - mahi
+    - jan
 _core:
   default_config_hash: 6O0gC4TZTBbBnnzYfAFvabohhUaGB9BqasrpqHRWDQM
-id: mahi_messages
-theme: mahi
-region: highlighted
-weight: -12
+id: jan_messages
+theme: jan
+region: content
+weight: -2
 provider: null
 plugin: system_messages_block
 settings:
