@@ -34,11 +34,9 @@
                     </div>
 
                     <div class="footer--right-column--content-txt">
-                        <div class="footer--right-column--summary">Abbreviated Bio... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin orci tellus, ultrices consectetur purus id, condimentum lacinia mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam porta metus tortor, sed ullamcorper felis dignissim egestas. Aliquam et porta enim. Sed convallis, felis nec ornare rhoncus, ante dolor vehicula dui.</div>
+                        <div class="footer--right-column--summary">{{ content }}</div>
                         <div class="footer--right-column--meta">
-                            <a href="/" title="" class="btn btn--white btn-small">Contact Jan</a>
-
-                            {{ content }}
+                            <a href="/about" title="" class="btn btn--white btn-small">About Jan</a>
                             <ul>
                                 <li><a href="/" title=""><i class="fa-brands fa-facebook-f"></i></a></li>
                                 <li><a href="/" title=""><i class="fa-brands fa-linkedin-in"></i></a></li>
@@ -61,12 +59,7 @@
                     <!--Important Links-->
                     <div class="footer--left-column-indColumn">
                         <h4>Important Links</h4>
-                        <ul>
-                            <li><a href="/" title="">Lorem ipsum dolor sit</a></li>
-                            <li><a href="/" title="">Amet consectetur</a></li>
-                            <li><a href="/" title="">Etiam et dignissim elit</a></li>
-                            <li><a href="/" title="">Etiam lectus massa</a></li>
-                        </ul>
+                        {{  drupal_menu('footer') }}
                     </div>
                     <!--END Important Links-->
 

@@ -1,0 +1,22 @@
+uuid: 114cf75d-7330-4b62-99df-0c44f3f6ea52
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_bio
+    - field.field.block_content.footer_bio.body
+  module:
+    - text
+id: block_content.footer_bio.default
+targetEntityType: block_content
+bundle: footer_bio
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

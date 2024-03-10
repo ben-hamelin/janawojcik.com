@@ -1,0 +1,8 @@
+uuid: 7e316537-fbfc-4071-a105-9d62086a33f3
+langcode: en
+status: true
+dependencies: {  }
+id: footer_bio
+label: 'Footer Bio'
+revision: 0
+description: ''
