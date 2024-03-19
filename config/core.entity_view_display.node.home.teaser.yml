@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.home.body
+    - field.field.node.home.field_panels
     - node.type.home
   module:
     - text
@@ -27,4 +28,5 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_panels: true

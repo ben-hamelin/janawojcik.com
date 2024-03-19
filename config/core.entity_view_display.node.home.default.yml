@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.home.body
+    - field.field.node.home.field_panels
     - node.type.home
   module:
+    - entity_reference_revisions
     - text
     - user
 id: node.home.default
@@ -19,6 +21,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_panels:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     settings: {  }
