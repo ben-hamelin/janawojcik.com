@@ -17,7 +17,7 @@ plugin: 'block_content:70c5ca9b-716e-4028-b01e-f5d1aad69457'
 settings:
   id: 'block_content:70c5ca9b-716e-4028-b01e-f5d1aad69457'
   label: 'Footer Bio'
-  label_display: visible
+  label_display: '0'
   provider: block_content
   status: true
   info: ''
