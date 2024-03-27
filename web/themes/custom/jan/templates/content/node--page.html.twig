@@ -101,6 +101,8 @@
     <!--##########################################################################################-->
 
 
+{# Hide this for node 17 which is the main page for the book Grateful for the Time We Had #}
+    {% if node.id() != 17 %}
 
     <!--WYSIWYG-->
     <section class="content-region content-region--general white-panel">
@@ -143,6 +145,7 @@
         </div>
     </section>
     <!--END WYSIWYG-->
+    {% endif %}
 
 </main>
 
