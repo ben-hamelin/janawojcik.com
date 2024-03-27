@@ -1,0 +1,10 @@
+uuid: 2d927852-70d4-4a9d-b689-279ee81de782
+langcode: en
+status: true
+dependencies: {  }
+id: simple_promo
+label: 'Simple Promo'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

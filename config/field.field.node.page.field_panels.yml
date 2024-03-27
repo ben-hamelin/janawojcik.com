@@ -1,17 +1,17 @@
-uuid: d942845e-8854-4b2c-9782-9f9c665fdf37
+uuid: b4cc9aac-3096-44f7-8d79-b0c7199f8ca7
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_panels
-    - node.type.home
+    - node.type.page
     - paragraphs.paragraphs_type.testimonial
   module:
     - entity_reference_revisions
-id: node.home.field_panels
+id: node.page.field_panels
 field_name: field_panels
 entity_type: node
-bundle: home
+bundle: page
 label: 'Panels '
 description: ''
 required: false

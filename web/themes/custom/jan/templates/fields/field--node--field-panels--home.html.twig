@@ -37,22 +37,6 @@
  */
 #}
 
-{% if label_hidden %}
-  {% if multiple %}
-
-      {% for item in items %}
-        {{ item.content }}
-      {% endfor %}
-
-  {% else %}
-    {% for item in items %}
-     {{ item.content }}
-    {% endfor %}
-  {% endif %}
-{% else %}
-
-    {% for item in items %}
-      {{ item.content }}
-    {% endfor %}
-
-{% endif %}
+{% for item in items %}
+  {{ item.content }}
+{% endfor %}

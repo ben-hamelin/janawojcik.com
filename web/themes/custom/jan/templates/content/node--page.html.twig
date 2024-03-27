@@ -74,7 +74,9 @@
     <!-- ##### General Page Hero ######################### -->
 
     <div class="hero landing-hero">
-
+        <div class="landing-hero-media media-position--default">
+            <img src="/{{ directory }}/assets/img/Home-BG-img.jpg" alt="">
+        </div>
         <!--Title + Intro-->
         <div class="upper-content">
             <div class="globalWidth">
@@ -109,7 +111,9 @@
                 <!--Main Col-->
                 <div class="content-region--general--main">
 
-                    {{ content|without('field_intro') }}
+                    {{ drupal_block('system_messages_block') }}
+
+                    {{ content|without('field_intro', 'field_panels' ) }}
 
                 </div>
                 <!--END Main Col-->
@@ -147,3 +151,5 @@
     <!--END WYSIWYG-->
 
 </main>
+
+{{ content.field_panels }}

@@ -1,0 +1,57 @@
+uuid: dbe8ee5f-2bf9-4bbd-bc8d-c01bb0c879cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.simple_promo.field_image
+    - field.field.paragraph.simple_promo.field_link
+    - field.field.paragraph.simple_promo.field_name
+    - field.field.paragraph.simple_promo.field_text
+    - paragraphs.paragraphs_type.simple_promo
+  module:
+    - image
+    - link
+id: paragraph.simple_promo.default
+targetEntityType: paragraph
+bundle: simple_promo
+mode: default
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_intro
+    - field.field.node.page.field_panels
     - field.field.node.page.field_view
     - node.type.page
   module:
+    - entity_reference_revisions
     - text
     - user
     - viewsreference
@@ -29,6 +31,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_panels:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
     region: content
   field_view:
     type: viewsreference_formatter

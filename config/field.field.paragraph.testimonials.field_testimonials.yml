@@ -1,20 +1,20 @@
-uuid: d942845e-8854-4b2c-9782-9f9c665fdf37
+uuid: 47d33140-6df8-4773-ad0a-0c7936699a51
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_panels
-    - node.type.home
+    - field.storage.paragraph.field_testimonials
     - paragraphs.paragraphs_type.testimonial
+    - paragraphs.paragraphs_type.testimonials
   module:
     - entity_reference_revisions
-id: node.home.field_panels
-field_name: field_panels
-entity_type: node
-bundle: home
-label: 'Panels '
+id: paragraph.testimonials.field_testimonials
+field_name: field_testimonials
+entity_type: paragraph
+bundle: testimonials
+label: Testimonials
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -23,13 +23,13 @@ settings:
   handler_settings:
     target_bundles:
       testimonial: testimonial
-    negate: 1
+    negate: 0
     target_bundles_drag_drop:
       simple_promo:
-        weight: 3
+        weight: 5
         enabled: false
       testimonial:
-        weight: 2
+        weight: 6
         enabled: true
       testimonials:
         weight: 4

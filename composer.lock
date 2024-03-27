@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "79a4c14cbd559e6cf4e23042de128e63",
+    "content-hash": "35010b9f1db036e584a80e1947c5ffef",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1987,6 +1987,62 @@
                 "source": "https://cgit.drupalcode.org/pathauto",
                 "issues": "https://www.drupal.org/project/issues/pathauto",
                 "documentation": "https://www.drupal.org/docs/8/modules/pathauto"
+            }
+        },
+        {
+            "name": "drupal/sfds",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/sfds.git",
+                "reference": "1.0.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/sfds-1.0.0-alpha1.zip",
+                "reference": "1.0.0-alpha1",
+                "shasum": "2e2ea0b512d6fb60ca80abfd8880efb400488e96"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-alpha1",
+                    "datestamp": "1699649893",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ben.hamelin",
+                    "homepage": "https://www.drupal.org/user/709120"
+                },
+                {
+                    "name": "bhogue",
+                    "homepage": "https://www.drupal.org/user/3530114"
+                },
+                {
+                    "name": "jordan.caldwell",
+                    "homepage": "https://www.drupal.org/user/3599439"
+                },
+                {
+                    "name": "pfrilling",
+                    "homepage": "https://www.drupal.org/user/169695"
+                }
+            ],
+            "description": "Provide a way to share entity field display settings across all fields.",
+            "homepage": "https://www.drupal.org/project/sfds",
+            "support": {
+                "source": "https://git.drupalcode.org/project/sfds"
             }
         },
         {
@@ -12090,7 +12146,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "pantheon-upstreams/upstream-configuration": 20,
-        "drupal/viewsreference": 10
+        "drupal/viewsreference": 10,
+        "drupal/sfds": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
@@ -12099,5 +12156,5 @@
     "platform-overrides": {
         "php": "8.2.0"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
