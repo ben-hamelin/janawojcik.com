@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35010b9f1db036e584a80e1947c5ffef",
+    "content-hash": "dd4ce9419c6d44c0e15fbd19aad193ee",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1991,29 +1991,26 @@
         },
         {
             "name": "drupal/sfds",
-            "version": "1.0.0-alpha1",
+            "version": "dev-1.0.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/sfds.git",
-                "reference": "1.0.0-alpha1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/sfds-1.0.0-alpha1.zip",
-                "reference": "1.0.0-alpha1",
-                "shasum": "2e2ea0b512d6fb60ca80abfd8880efb400488e96"
+                "reference": "cda73acdbba5b6ccc6e4d9c27fb94f9b892ed5d1"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.0.x": "1.0.x-dev"
+                },
                 "drupal": {
-                    "version": "1.0.0-alpha1",
-                    "datestamp": "1699649893",
+                    "version": "1.0.0-alpha1+2-dev",
+                    "datestamp": "1711552017",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -12147,7 +12144,7 @@
     "stability-flags": {
         "pantheon-upstreams/upstream-configuration": 20,
         "drupal/viewsreference": 10,
-        "drupal/sfds": 15
+        "drupal/sfds": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
