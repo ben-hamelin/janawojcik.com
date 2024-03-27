@@ -19,6 +19,6 @@ div[role='contentinfo'] a {
 body.user-logged-in header#header {
     margin-top:60px;
 }
-div#toolbar-administration{
-    z-index:1001;
+nav#toolbar-bar {
+    z-index:9999;
 }
