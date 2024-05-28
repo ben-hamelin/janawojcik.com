@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8a76d6567035ef1240d94a7752f0e71",
+    "content-hash": "854781a0168fe7dd501622817d926543",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2064,26 +2064,29 @@
         },
         {
             "name": "drupal/sfds",
-            "version": "dev-1.0.x",
+            "version": "1.0.0-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/sfds.git",
-                "reference": "e75144cf406330f5548d94712a8f50efc8b70c6e"
+                "reference": "1.0.0-alpha3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/sfds-1.0.0-alpha3.zip",
+                "reference": "1.0.0-alpha3",
+                "shasum": "569944c03871a0634c384389cbf81d890ece72bf"
             },
             "require": {
                 "drupal/core": "^10.2 || ^11"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.0.x": "1.0.x-dev"
-                },
                 "drupal": {
-                    "version": "1.0.0-alpha2+1-dev",
-                    "datestamp": "1714564360",
+                    "version": "1.0.0-alpha3",
+                    "datestamp": "1714565032",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "message": "Alpha releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -12283,7 +12286,7 @@
     "stability-flags": {
         "pantheon-upstreams/upstream-configuration": 20,
         "drupal/viewsreference": 10,
-        "drupal/sfds": 20
+        "drupal/sfds": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
@@ -12292,5 +12295,5 @@
     "platform-overrides": {
         "php": "8.2.0"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

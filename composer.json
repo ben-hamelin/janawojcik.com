@@ -28,7 +28,7 @@
         "drupal/twig_tweak": "^3.3",
         "drupal/viewsreference": "^2.0@beta",
         "drupal/paragraphs": "^1.17",
-        "drupal/sfds": "1.0.x-dev@dev",
+        "drupal/sfds": "^1.0@alpha",
         "drupal/google_tag": "^2.0",
         "drupal/simple_sitemap": "^4.1"
     },
