@@ -15,6 +15,7 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  google_tag: 0
   image: 0
   jan_misc: 0
   link: 0
@@ -23,6 +24,7 @@ module:
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
+  metatag_open_graph: 0
   mysql: 0
   node: 0
   page_cache: 0
@@ -31,6 +33,7 @@ module:
   phpass: 0
   responsive_image: 0
   sfds: 0
+  simple_sitemap: 0
   system: 0
   taxonomy: 0
   text: 0
