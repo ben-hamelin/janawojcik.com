@@ -4,7 +4,13 @@ status: true
 dependencies:
   module:
     - node
+    - sfds
     - text
+third_party_settings:
+  sfds:
+    enabled: true
+    mode: global
+    bundle: article
 _core:
   default_config_hash: EBUo7qOWqaiZaQ_RC9sLY5IoDKphS34v77VIHSACmVY
 id: node.body
