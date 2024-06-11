@@ -1,0 +1,103 @@
+// --------------------------------------------------
+// STYLES
+// --------------------------------------------------
+// This is our main SCSS file that imports everything
+// that gets compiled into style.css
+
+// Import order:
+// 1.  Encoding
+// 2.  Resets
+// 3.  Helpers
+// 4.  Vendors
+// 5.  Base
+// 6.  Layout
+// 7.  Components
+// 8.  Modules
+// 9.  Drupal
+// 10. Print 
+
+//
+// 01. Encoding
+// --------------------------------------------------
+@charset "UTF-8";
+
+
+//
+// 02. Resets
+// --------------------------------------------------
+// Import our global variables first (reset)
+@import "resets/reset";
+
+
+//
+// 03. Helpers
+// --------------------------------------------------
+
+@import "helpers/imports";
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/placeholders";
+@import "helpers/mixins";
+@import "helpers/helpers";
+@import "helpers/animate"; 
+
+ 
+//
+// 04. Vendors
+// --------------------------------------------------
+
+$fa-font-path: "../fonts/fontawesome-5.15.4/webfonts";
+@import "vendors/fontawesome-pro-6.5.1/fontawesome";
+@import "vendors/fontawesome-pro-6.5.1/solid";
+@import "vendors/fontawesome-pro-6.5.1/light";
+@import "vendors/fontawesome-pro-6.5.1/brands";
+
+//ADW
+@import "vendors/adw-menu/adw-menu";
+
+
+//
+// 05. Base
+// --------------------------------------------------
+// Client site globals
+
+@import "base/base";
+@import "base/typography";
+
+//
+// 06. Layouts
+// --------------------------------------------------
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/main";
+@import "layout/section-title";
+
+//
+// 07. Components
+// --------------------------------------------------
+
+
+//
+// 08. Modules
+// --------------------------------------------------
+// Functional Blocks
+
+@import "modules/home";
+@import "modules/general";
+@import "modules/wysiwyg";
+@import "modules/listing";
+@import "modules/full-width-promo";
+@import "modules/slider-testimonial";
+@import "modules/half-promo";
+@import "modules/simple-promo";
+@import "modules/features-grid";
+//
+// 09. Drupal
+// --------------------------------------------------
+@import "drupal/admin";
+
+//
+// 10. Print
+// --------------------------------------------------
+@import "base/print";

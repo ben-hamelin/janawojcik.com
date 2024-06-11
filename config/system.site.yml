@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: l58O_yEXSo-SeJi19LXdzTU1tNJG3lmnIhCitRkM1tk
+langcode: en
+uuid: d4bffde3-666e-455e-b4d8-1473ce84f109
+name: 'Jan Wojcik Author'
+mail: ben.hamelin@yahoo.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/14
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: ''

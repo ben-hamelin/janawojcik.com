@@ -1,0 +1,22 @@
+uuid: b2de97a0-7eac-41b0-bb78-a3fc13ce1cd1
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - jan
+_core:
+  default_config_hash: E7ZFXXrrN9ZTeE2myhyEjYge1XXRgTPXN9a5c8KoyrM
+id: jan_breadcrumbs
+theme: jan
+region: content
+weight: -6
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

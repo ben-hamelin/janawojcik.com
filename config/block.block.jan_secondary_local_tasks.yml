@@ -1,0 +1,22 @@
+uuid: a4e35bcd-d787-4042-ae74-77639754b8f5
+langcode: en
+status: true
+dependencies:
+  theme:
+    - jan
+_core:
+  default_config_hash: 4WmbqV_BiKsuJxbaTjH1FrfTA3__jmXBBEjfFSOdk4E
+id: jan_secondary_local_tasks
+theme: jan
+region: content
+weight: -1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

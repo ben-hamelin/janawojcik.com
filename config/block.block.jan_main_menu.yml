@@ -1,0 +1,27 @@
+uuid: b063f443-c9fa-44a4-9357-c05caa2cbc74
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - jan
+_core:
+  default_config_hash: gc42M-jgw5dDfV73xZrNTQdNhX6ol9H4yKnnYdzkXGs
+id: jan_main_menu
+theme: jan
+region: header
+weight: -7
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 3
+  expand_all_items: true
+visibility: {  }

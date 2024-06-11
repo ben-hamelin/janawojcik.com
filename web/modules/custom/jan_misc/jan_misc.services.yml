@@ -1,0 +1,5 @@
+services:
+  arfcu.twig.TwigRemoveComments:
+    class: Drupal\jan_misc\TwigCustomFilters
+    tags:
+      - { name: twig.extension }

@@ -1,0 +1,23 @@
+uuid: 9bd65b69-9b32-4d29-80ae-2a6950643f5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: GTM-TDN45FBG.663d03d7ef3cf6.23091798
+label: GTM-TDN45FBG
+weight: 0
+tag_container_ids:
+  - G-1P76PYP6K0
+advanced_settings:
+  consent_mode: true
+dimensions_metrics: {  }
+conditions:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+events: {  }

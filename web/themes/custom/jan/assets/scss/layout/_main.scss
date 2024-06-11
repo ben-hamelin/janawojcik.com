@@ -1,0 +1,65 @@
+// File Name: _main.scss
+// Description: main wrapper
+// Used by:
+// Dependencies:
+// ------------------------------------------------------------
+
+
+//main
+
+.main{
+	margin-top: 0;
+}
+
+.page-section {
+	&:last-of-type {
+		/*padding-bottom:120px;
+		@media only screen and (min-width: 600px) {
+			padding-bottom:200px;
+		}
+		@media only screen and (min-width: 1200px) {
+			padding-bottom:250px;
+		}*/
+	}
+}
+
+.content-region {
+  
+  line-height:1.8;
+  position: relative;
+  z-index: 100;
+  background: $white;
+  
+  a {
+    color: $brand-green;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: #E0EDDF;
+    text-underline-offset: 3px;
+    &:hover {
+      color: $brand-blue;
+      text-decoration-color: $gray__medium;
+    }
+  }
+  
+  ul {
+    list-style: disc;
+    margin: 0 0 30px 20px;
+  }
+  
+  ol {
+    list-style: decimal;
+    margin: 0 0 30px 20px;
+  }
+  
+  p+ul,
+  p+ol, 
+  ol+ol,
+  ul+ul,
+  ol+ul,
+  ul+ol {
+    margin: -20px 0 30px 20px;
+  }
+  
+}
+

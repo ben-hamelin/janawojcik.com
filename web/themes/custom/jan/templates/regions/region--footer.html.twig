@@ -1,0 +1,84 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a header region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region div.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{% set attributes = attributes.addClass('clearfix') %}
+
+
+
+<!--Footer-->
+<footer class="footer">
+    <div class="globalWidth">
+        <div class="footer-wrapper">
+
+            <!--Right Column-->
+            <div class="footer--right-column">
+                <div class="footer--right-column--logo">
+                    <img src="/{{ directory }}/assets/img/Logo-Blue.svg" alt="">
+                </div>
+
+                <div class="footer--right-column--content">
+
+                    <div class="footer--right-column--content-image">
+                        <img src="/{{ directory }}/assets/img/Headshot.jpg" alt="">
+                    </div>
+
+                    <div class="footer--right-column--content-txt">
+                        <div class="footer--right-column--summary">{{ content }}</div>
+                        <div class="footer--right-column--meta">
+                            <a href="/about" title="" class="btn btn--white btn-small">About Jan</a>
+                            <ul>
+                                <li><a href="https://www.facebook.com/jan.wojcik.3950" title=""><i class="fa-brands fa-facebook-f"></i></a></li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--END Right Column-->
+
+            <!--Left Column-->
+            <div class="footer--left-column">
+                <div class="footer--left-column-wrapper">
+
+                    <!--Important Links-->
+                    <div class="footer--left-column-indColumn">
+                        <h4>Important Links</h4>
+                        {{  drupal_menu('footer') }}
+                    </div>
+                    <!--END Important Links-->
+
+                    <!--Newsletter-->
+                    <div class="footer--left-column-indColumn">
+                        <!--<h4>Email Newsletter</h4>
+                        <div>
+                            <p>Newsletter service API</p>
+                        </div>-->
+                        &copy; {{ "now"|date('Y') }} Jan A. Wojcik
+                    </div>
+                    <!--END Newsletter-->
+
+                </div>
+            </div>
+            <!--END Left Column-->
+
+        </div>
+    </div>
+
+</footer>
+<!--END Footer-->
+{{ drupal_block('local_tasks_block') }}
+

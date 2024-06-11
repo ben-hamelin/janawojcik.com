@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Theme override of an image.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the img tag.
+ * - style_name: (optional) The name of the image style applied.
+ *
+ * @see template_preprocess_image()
+ */
+#}
+
+{%  if srcset is empty %}
+  <img{{ attributes }}" />
+{%  else %}
+  <picture>
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    {% for src in srcset %}
+      <source srcset="{{ src.src }} {{ src.width }}w" media="(min-width: {{ src.breakpoint }}px)" sizes="{{ attributes.sizes }}" />
+    {% endfor %}
+    <!--[if IE 9]></video><![endif]-->
+    <img src="{{ attributes.src }}" srcset="
+          {% for src in srcset %}
+            {{ src.src }} {{ src.width }}w,
+          {%  endfor %}
+         " sizes="{{ attributes.sizes }}" title="{{ attributes.title }}" alt="{{ attributes.alt }}" class="{{ attributes.class }}">
+  </picture>
+{% endif %}

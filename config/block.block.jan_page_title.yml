@@ -1,0 +1,20 @@
+uuid: 2ae5549d-cc3c-44db-8909-1bd21e709fe9
+langcode: en
+status: false
+dependencies:
+  theme:
+    - jan
+_core:
+  default_config_hash: cRYQm774QG7qaYT0wk4ptn-GMhoe4ErDyexgsj4TKfQ
+id: jan_page_title
+theme: jan
+region: content
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

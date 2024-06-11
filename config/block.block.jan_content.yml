@@ -1,0 +1,22 @@
+uuid: 1faeba32-5af5-4e75-a959-ba25173fc25b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - jan
+_core:
+  default_config_hash: 0MpHdTxyHKQQKhTl544ZO2_ni3BWEFn-UoAcqfqLAAM
+id: jan_content
+theme: jan
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,19 @@
+name: Jan Wojcik
+description: A custom Drupal theme developed by Ben Hamelin. Drupal 9 and beyond ready.
+type: theme
+core_version_requirement: ">=9"
+base theme: stable9
+
+libraries:
+  - jan/custom-css
+  - jan/header-js
+  - jan/custom-js
+
+# Define regions
+regions:
+  header: 'Header'
+  content: 'Main content'
+  footer: 'Footer'
+
+libraries-override:
+  core/modernizr: false

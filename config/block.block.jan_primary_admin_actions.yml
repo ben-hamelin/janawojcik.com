@@ -1,0 +1,20 @@
+uuid: 7256211b-bbf5-471b-bcab-ec1aa65dd63c
+langcode: en
+status: false
+dependencies:
+  theme:
+    - jan
+_core:
+  default_config_hash: bxfUm8OiHyh66yCgvAPPb1uVzcEDmaptB9Wr4_iwayY
+id: jan_primary_admin_actions
+theme: jan
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,38 @@
+uuid: 98b548af-7bf3-4092-86cd-dd2d5b6d6d14
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - media
+    - node
+    - path
+    - system
+    - taxonomy
+    - toolbar
+id: editor
+label: Editor
+weight: 2
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access site in maintenance mode'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'administer menu'
+  - 'administer nodes'
+  - 'bypass node access'
+  - 'create media'
+  - 'create url aliases'
+  - 'delete all revisions'
+  - 'delete any media'
+  - 'delete own files'
+  - 'link to any page'
+  - 'revert all revisions'
+  - 'update any media'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view the administration theme'

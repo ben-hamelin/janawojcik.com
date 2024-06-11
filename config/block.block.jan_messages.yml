@@ -1,0 +1,22 @@
+uuid: 17097667-7b1c-464d-ae06-619e36ca9b8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - jan
+_core:
+  default_config_hash: 6O0gC4TZTBbBnnzYfAFvabohhUaGB9BqasrpqHRWDQM
+id: jan_messages
+theme: jan
+region: content
+weight: -2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

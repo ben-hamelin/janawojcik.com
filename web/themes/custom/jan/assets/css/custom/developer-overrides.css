@@ -1,0 +1,24 @@
+div[role='contentinfo'] {
+	
+    text-align: center;
+    font-size: larger;
+    margin: 1em;
+    background-color: #155e67;
+    color: white;
+    padding: 1em;
+}
+
+
+div[role='contentinfo'] a {
+	
+    color: white;
+		font-style:italic;
+
+}
+
+body.user-logged-in header#header {
+    margin-top:60px;
+}
+nav#toolbar-bar {
+    z-index:9999;
+}

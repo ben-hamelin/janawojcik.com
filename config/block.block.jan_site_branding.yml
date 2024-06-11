@@ -1,0 +1,25 @@
+uuid: 1c04000e-9fa0-461d-a8c8-e93c95e8f24c
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - jan
+_core:
+  default_config_hash: Ki5kUxL9gNONfmNzBVYav365zNdgYNhmOkIPf37rjeE
+id: jan_site_branding
+theme: jan
+region: header
+weight: -4
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

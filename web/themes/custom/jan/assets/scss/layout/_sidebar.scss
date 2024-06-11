@@ -1,0 +1,211 @@
+// File Name: _sidebar.scss
+// Description: General global sidebar styles
+// Used by:
+// Dependencies:
+// ------------------------------------------------------------
+
+  .sidebar, 
+  .modular-wysiwyg__cols {
+    order:2;
+    @media only screen and (min-width: 1100px) {
+      order:1;
+    }
+
+    #leftside-navigation {
+      display:none;
+      @media only screen and (min-width: 1100px) {
+        display:block;
+      }
+
+      .parent-link {
+        margin-bottom:10px;
+        padding-bottom:10px;
+        border-bottom: 2px solid $light-tan;
+        a {
+          text-decoration:none;
+          font-family:$font-family__san-serif;
+          font-weight:bold;
+          color:$dark;
+        }
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        display:inline-block;
+        width: 100%;
+        li {
+          display: block;
+          width: 100%;
+          vertical-align: middle;
+          list-style-type: none;
+          &.open > a > span.icon {
+            transform: rotate(90deg);
+            &:not(:hover) {
+              color:$steel-blue-dark;  
+            }
+          }
+
+          ul {
+            li {
+              a {
+                padding: 10px 60px 10px 10px;
+              }
+            }
+          }
+          
+          a {
+            position: relative;
+            width: 100%;
+            display: block;
+            color: $medium-brown;
+            text-decoration: none;
+            width: 100%;
+            padding: 10px 60px 10px 0;
+            box-sizing: border-box;
+            font-size: 16px;
+            line-height:22px;
+            outline: 0;
+            font-weight:500;
+            
+            span.label {
+              display: inline-block;
+              &:hover {
+                color: $steel-blue;
+              }
+            }
+            span.icon {
+              top: 0;
+              right:0;
+              width: 42px;
+              height:42px;
+              line-height: 42px;
+              text-align: center;
+              display:block;
+              position:absolute;
+              touch-action: manipulation;
+              &:hover {
+                background-color: $steel-blue-dark;
+                color: $white;
+              }
+              .fa-angle-left, .fa-angle-right {
+                padding-top: 3px;
+              }
+            }
+          }
+        }
+      }
+      ul ul {
+        display: none;
+        background-color: rgba(0,0,0,0.05);
+        li {
+          &:last-of-type {
+            border-bottom: none;
+          }
+          
+        }
+      }
+    }
+
+    .sidebar-element {
+      margin-top:40px;
+      @media only screen and (min-width: 1100px) {
+        &:first-of-type {
+          margin-top:0;
+        }
+      }
+    }
+
+    .sidebar-promobox {
+        padding:30px;
+        background: #E6ECEF;
+        font-size: 15px;
+        h3 {
+          font-size: 18px;
+          margin-bottom: 10px;
+          //font-family:$font-family__san-serif;
+          font-weight:700;
+          color:$dark;
+        }
+        p {
+          margin-bottom:0;
+          margin-top:10px;
+          line-height: 1.5;
+          font-family:$font-family__san-serif;
+        }
+        a.btn {
+          display: inline-block;
+          margin-top: 20px;
+        }
+    }
+
+    .sidebar-archive {
+      display:block;
+
+      .parent-link {
+        margin-bottom:10px;
+        padding-bottom:10px;
+        border-bottom: 2px solid $cream-border;
+        a {
+          text-decoration:none;
+          font-family:$font-family__san-serif;
+          font-weight:bold;
+          color:$dark;
+        }
+      }
+
+
+      ul {
+        margin: 0;
+        padding: 0;
+        display:inline-block;
+        width: 100%;
+        li {
+          display: block;
+          width: 100%;
+          vertical-align: middle;
+          list-style-type: none;
+          &.open > a > span.icon {
+            transform: rotate(90deg);
+          &:not(:hover) {
+            color:#03a158;  
+          }
+        }
+
+        ul {
+          li {
+            a {
+              padding: 10px 60px 10px 10px;
+            }
+          }
+        }
+        
+        a {
+          position: relative;
+          width: 100%;
+          display: block;
+          color: $brand-green;
+          text-decoration: none;
+          width: 100%;
+          padding: 10px 60px 10px 0;
+          box-sizing: border-box;
+          font-size: 16px;
+          line-height:22px;
+          outline: 0;
+          font-weight:400;
+
+          &:hover {
+            color: #81a103;
+          }
+
+          span {
+            font-weight:bold;
+          }
+          
+        }
+      }
+    }
+    
+  }
+
+}

@@ -1,0 +1,55 @@
+// File Name: _section-title.scss
+// Description: global section titles
+// Used by:
+// Dependencies:
+// ------------------------------------------------------------
+
+
+/*Section Title*/
+.section__title {
+    width:100%;
+    margin-bottom:30px;
+    @media only screen and (min-width: 1100px) {
+        margin-bottom:50px;
+        max-width:860px;
+    }
+
+    h2 {
+        margin-bottom:10px;
+    }
+
+    .section__title-intro {
+        font-size:18px;
+        line-height: 150%;
+        font-family:$font-family__serif;
+        font-weight:500;
+        margin-top:15px;
+        @media only screen and (min-width: 1100px) {
+            font-size:22px;
+        }
+
+    }
+
+}
+
+.section__title--offset {
+    @media only screen and (min-width: 1100px) {
+        padding-left:7%
+    }
+}
+
+.sock-panel {
+
+    .section__title {
+        @media only screen and (min-width: 1100px) {
+            max-width:100%;
+        }
+    }
+
+    .section__title--offset {
+        @media only screen and (min-width: 1100px) {
+            padding-left:0;
+        }
+    }
+
+}

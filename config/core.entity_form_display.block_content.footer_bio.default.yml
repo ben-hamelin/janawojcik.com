@@ -1,0 +1,33 @@
+uuid: 5f432261-e279-4312-b8cf-958eb414ac0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_bio
+    - field.field.block_content.footer_bio.body
+  module:
+    - text
+id: block_content.footer_bio.default
+targetEntityType: block_content
+bundle: footer_bio
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 26
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

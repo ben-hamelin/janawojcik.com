@@ -1,0 +1,25 @@
+uuid: 1cb7136f-413d-4b2c-b1f9-30d9d553be1c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:footer_bio:70c5ca9b-716e-4028-b01e-f5d1aad69457'
+  module:
+    - block_content
+  theme:
+    - jan
+id: jan_footerbio
+theme: jan
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:70c5ca9b-716e-4028-b01e-f5d1aad69457'
+settings:
+  id: 'block_content:70c5ca9b-716e-4028-b01e-f5d1aad69457'
+  label: 'Footer Bio'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,165 @@
+// File Name: _footer.scss
+// Description: global footer styles
+// Used by:
+// Dependencies:
+// ------------------------------------------------------------
+
+
+footer {
+  position:relative;
+	background:$steel-blue-light;
+  z-index: 100;
+
+  .footer-wrapper {
+    display:block;
+    padding-top:50px;
+    padding-bottom:50px;
+    @media only screen and (min-width: 1000px) {
+      padding-top:100px;
+      padding-bottom:100px;
+    }
+    @media only screen and (min-width: 1200px) {
+      display:flex;
+      gap: 7%;
+    }
+  }
+
+  .footer--right-column {
+    display:block;
+    width:100%;
+    @media only screen and (min-width: 1200px) {
+      flex: 0 0 50%;
+      max-width:50%;
+    }
+
+    .footer--right-column--logo {
+      margin-bottom:20px;
+    }
+
+    .footer--right-column--content {
+      
+      .footer--right-column--content-image {
+        width:75px;
+        padding-top: 5px;
+        margin-bottom: 10px;
+        img {
+          width:100%;
+          max-width:100%;
+          height:auto;
+          border-radius: 5px;
+        }
+      }
+
+      .footer--right-column--content-txt {
+        
+        .footer--right-column--meta {
+          margin-top:20px;
+          .btn {
+            margin-right:15px;
+          }
+
+          ul {
+            list-style: none;
+            display:inline-block;
+            li {
+              display: inline-block;
+              padding-right: 2px;
+              a {
+                display: inline-block;
+                font-size: 22px;
+                color: $steel-blue-dark;
+                transition: all .2s ease-in-out;
+                &:hover {
+                  opacity: .5;
+                }
+              }
+            }
+          }
+
+        }
+      }
+
+      @media only screen and (min-width: 600px) {
+        display:flex;
+        gap: 30px;
+
+        .footer--right-column--content-txt {
+          flex:1;
+        }
+      }
+
+    }
+
+    .footer--right-column--summary {
+      color:$steel-blue-dark;
+      font-size:16px;
+      line-height:1.5;
+      font-family:$font-family__san-serif;
+    }
+
+  }
+
+  .footer--left-column {
+    display:block;
+    width:100%;
+    @media only screen and (min-width: 1200px) {
+      flex: 0 0 50%;
+      max-width:50%;
+      margin-top: 70px;
+    }
+
+    .footer--left-column-wrapper {
+      display:flex;
+      flex-wrap: wrap;
+    }
+
+    .footer--left-column-indColumn {
+      flex: 0 0 100%;
+      max-width:100%;
+      font-family:$font-family__san-serif;
+      margin-top:40px;
+      @media only screen and (min-width: 600px) {
+        flex: 0 0 50%;
+        max-width:calc(100%/2);
+        padding-right: 30px;
+      }
+      @media only screen and (min-width: 1200px) {
+        margin-top:0;
+      }
+    }
+
+    h4 {
+      color:$steel-blue-dark;
+      font-size:18px;
+      font-family:$font-family__san-serif;
+      margin-bottom:15px;
+    }
+
+    a {
+      font-family:$font-family__san-serif;
+      font-weight:600;
+      font-size:14px;
+      color:$medium-brown;
+      text-decoration: underline;
+      text-decoration-color: $steel-blue-xlight;
+      text-underline-offset: 3px;
+      &:hover {
+        color:$brand-light-green;
+        text-decoration: underline;
+        text-decoration-color: $brand-light-blue;
+        text-underline-offset: 3px;
+      }
+    }
+
+    ul {
+      li {
+        margin-bottom:8px;
+        &:last-of-type {
+          margin-bottom:0;
+        }
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,22 @@
+uuid: daa4bc03-6a21-4d75-a1f2-31773267dd6e
+langcode: en
+status: false
+dependencies:
+  theme:
+    - jan
+_core:
+  default_config_hash: dVXNe1IMzNakM6XQ6x1Iku6tj2LTd_xSoEmijNhFUjg
+id: jan_primary_local_tasks
+theme: jan
+region: content
+weight: -3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }
