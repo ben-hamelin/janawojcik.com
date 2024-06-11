@@ -3,7 +3,7 @@
         'name' => 'pantheon-upstreams/drupal-composer-managed',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'ddb680420614d6892333dfe5fdda887d895848a5',
+        'reference' => 'f1988f01e3414c5891ebb91d5cfe842de3359a83',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -685,7 +685,7 @@
         'pantheon-upstreams/drupal-composer-managed' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'ddb680420614d6892333dfe5fdda887d895848a5',
+            'reference' => 'f1988f01e3414c5891ebb91d5cfe842de3359a83',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -874,8 +874,8 @@
         'psr/container-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '^1.0',
+                0 => '^1.0',
+                1 => '1.0',
             ),
         ),
         'psr/event-dispatcher-implementation' => array(
