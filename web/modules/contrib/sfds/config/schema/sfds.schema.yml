@@ -1,0 +1,13 @@
+field.storage.*.*.third_party.sfds:
+  type: mapping
+  label: 'Shard Field Display Settings'
+  mapping:
+    enabled:
+      type: boolean
+      label: 'Enable shared display settings'
+    mode:
+      type: string
+      label: 'Default settings mode.'
+    bundle:
+      type: string
+      label: 'Default bundle for global mode.'
