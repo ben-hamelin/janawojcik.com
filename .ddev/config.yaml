@@ -1,6 +1,6 @@
 name: jan-wojcik-author
 type: drupal10
-docroot: web
+docroot: .
 php_version: "8.2"
 webserver_type: nginx-fpm
 xdebug_enabled: false

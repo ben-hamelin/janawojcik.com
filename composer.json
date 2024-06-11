@@ -34,7 +34,7 @@
     "extra": {
         "drupal-scaffold": {
             "locations": {
-                "web-root": "./web"
+                "web-root": "."
             },
             "allowed-packages": ["pantheon-systems/drupal-integrations"],
             "file-mapping": {
@@ -44,16 +44,16 @@
             }
         },
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "core": ["type:drupal-core"],
+            "libraries/{$name}": ["type:drupal-library"],
+            "modules/contrib/{$name}": ["type:drupal-module"],
+            "profiles/contrib/{$name}": ["type:drupal-profile"],
+            "themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
-            "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
-            "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
-            "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
+            "modules/custom/{$name}": ["type:drupal-custom-module"],
+            "profiles/custom/{$name}": ["type:drupal-custom-profile"],
+            "themes/custom/{$name}": ["type:drupal-custom-theme"],
+            "private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
         },
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
