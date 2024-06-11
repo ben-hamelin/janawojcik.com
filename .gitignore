@@ -56,19 +56,8 @@
 # See the "installer-paths" section in the top-level composer.json
 # file.
 # ------------------------------------------------------------------
-/drush/Commands/contrib/
-/web/core/
-/modules/contrib/
-/web/themes/contrib/
-/web/profiles/contrib/
-/web/libraries/
-/web/private/scripts/quicksilver
 
 
-# Generally you should only ignore the root vendor directory. It's important
-# that core/assets/vendor and any other vendor directories within contrib or
-# custom module, theme, etc., are not ignored unless you purposely do so.
-/vendor/
 
 # Ignore other scaffold files
 #
@@ -86,7 +75,7 @@
 # The drupal/core-composer-scaffold component will write .gitignore
 # files to other locations where it scaffolds files that are not
 # already ignored. We must also ignore these generated files.
-/web/**/.gitignore
+/**/.gitignore
 
 
 # Other common rules
@@ -96,4 +85,3 @@
 
 # Ignore .env files as they are personal
 #/.env
-/autoload.php
