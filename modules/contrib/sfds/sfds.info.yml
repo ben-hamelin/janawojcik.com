@@ -2,8 +2,9 @@ name: Shared Field Display Settings
 type: module
 description: 'Provide a way to share entity field display settings across all fields.'
 package: Fields
-core_version_requirement: ^9 || ^10
-# Information added by Drupal.org packaging script on 2023-11-10
-version: '1.0.0-alpha1'
+core_version_requirement: ^10.2 || ^11
+
+# Information added by Drupal.org packaging script on 2024-05-01
+version: '1.0.0-alpha3'
 project: 'sfds'
-datestamp: 1699649895
+datestamp: 1714565034

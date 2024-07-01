@@ -72,26 +72,26 @@ class FieldStorageConfigTest extends BrowserTestBase {
       }
 
       // Confirm the field exists and is disabled by default.
-      $this->drupalGet("/admin/structure/types/manage/article/fields/node.article.{$field_name}/storage");
+      $this->drupalGet("/admin/structure/types/manage/article/fields/node.article.{$field_name}");
       $this->assertSession()->statusCodeEquals(200);
-      $this->assertSession()->fieldExists('sfds_enabled');
-      $this->assertSession()->fieldValueEquals('sfds_enabled', FALSE);
+      $this->assertSession()->fieldExists('field_storage[subform][sfds_container][sfds_enabled]');
+      $this->assertSession()->fieldValueEquals('field_storage[subform][sfds_container][sfds_enabled]', (string) FALSE);
 
       // Ensure the default values are set.
-      $this->assertSession()->fieldExists('sfds_mode');
-      $this->assertSession()->fieldValueEquals('sfds_mode', 'bundle');
+      $this->assertSession()->fieldExists('field_storage[subform][sfds_container][sfds_mode]');
+      $this->assertSession()->fieldValueEquals('field_storage[subform][sfds_container][sfds_mode]', 'bundle');
 
-      $this->assertSession()->fieldExists('sfds_default_bundle');
-      $this->assertSession()->fieldValueEquals('sfds_default_bundle', 'article');
+      $this->assertSession()->fieldExists('field_storage[subform][sfds_container][sfds_default_bundle]');
+      $this->assertSession()->fieldValueEquals('field_storage[subform][sfds_container][sfds_default_bundle]', 'article');
 
-      // Enable SFDS and save the form.
+      // Enable SFDS and save the form in `bundle` mode.
       $this->submitForm(
         [
-          'sfds_enabled' => TRUE,
-          'sfds_mode' => 'bundle',
-          'sfds_default_bundle' => 'page',
+          'field_storage[subform][sfds_container][sfds_enabled]' => TRUE,
+          'field_storage[subform][sfds_container][sfds_mode]' => 'bundle',
+          'field_storage[subform][sfds_container][sfds_default_bundle]' => 'page',
         ],
-        'Save field settings'
+        'Save settings'
       );
       $this->assertSession()->statusCodeEquals(200);
 
@@ -113,26 +113,26 @@ class FieldStorageConfigTest extends BrowserTestBase {
       $this->assertSession()->linkExists('Click here to manage the display settings for this field.');
 
       // Confirm the field value was saved.
-      $this->drupalGet("/admin/structure/types/manage/article/fields/node.article.{$field_name}/storage");
+      $this->drupalGet("/admin/structure/types/manage/article/fields/node.article.{$field_name}");
       $this->assertSession()->statusCodeEquals(200);
-      $this->assertSession()->fieldExists('sfds_enabled');
-      $this->assertSession()->fieldValueEquals('sfds_enabled', TRUE);
+      $this->assertSession()->fieldExists('field_storage[subform][sfds_container][sfds_enabled]');
+      $this->assertSession()->fieldValueEquals('field_storage[subform][sfds_container][sfds_enabled]', (string) TRUE);
 
       // Ensure the values were saved.
-      $this->assertSession()->fieldExists('sfds_mode');
-      $this->assertSession()->fieldValueEquals('sfds_mode', 'bundle');
+      $this->assertSession()->fieldExists('field_storage[subform][sfds_container][sfds_mode]');
+      $this->assertSession()->fieldValueEquals('field_storage[subform][sfds_container][sfds_mode]', 'bundle');
 
-      $this->assertSession()->fieldExists('sfds_default_bundle');
-      $this->assertSession()->fieldValueEquals('sfds_default_bundle', 'page');
+      $this->assertSession()->fieldExists('field_storage[subform][sfds_container][sfds_default_bundle]');
+      $this->assertSession()->fieldValueEquals('field_storage[subform][sfds_container][sfds_default_bundle]', 'page');
 
       // Change to GLOBAL sfds mode and save the form.
       $this->submitForm(
         [
-          'sfds_enabled' => TRUE,
-          'sfds_mode' => 'global',
-          'sfds_default_bundle' => 'page',
+          'field_storage[subform][sfds_container][sfds_enabled]' => TRUE,
+          'field_storage[subform][sfds_container][sfds_mode]' => 'global',
+          'field_storage[subform][sfds_container][sfds_default_bundle]' => 'page',
         ],
-        'Save field settings'
+        'Save settings'
       );
       $this->assertSession()->statusCodeEquals(200);
 
@@ -164,27 +164,27 @@ class FieldStorageConfigTest extends BrowserTestBase {
         continue;
       }
       // Confirm the field exists and is disabled by default.
-      $this->drupalGet("/admin/structure/types/manage/article/fields/node.article.{$field_name}/storage");
+      $this->drupalGet("/admin/structure/types/manage/article/fields/node.article.{$field_name}");
       $this->assertSession()->statusCodeEquals(200);
-      $this->assertSession()->fieldExists('sfds_enabled');
-      $this->assertSession()->fieldValueEquals('sfds_enabled', FALSE);
+      $this->assertSession()->fieldExists('field_storage[subform][sfds_container][sfds_enabled]');
+      $this->assertSession()->fieldValueEquals('field_storage[subform][sfds_container][sfds_enabled]', (string) FALSE);
 
       // Ensure the default values are set.
-      $this->assertSession()->fieldExists('sfds_mode');
-      $this->assertSession()->fieldValueEquals('sfds_mode', 'bundle');
+      $this->assertSession()->fieldExists('field_storage[subform][sfds_container][sfds_mode]');
+      $this->assertSession()->fieldValueEquals('field_storage[subform][sfds_container][sfds_mode]', 'bundle');
 
-      $this->assertSession()->fieldExists('sfds_default_bundle');
-      $this->assertSession()->fieldValueEquals('sfds_default_bundle', 'article');
+      $this->assertSession()->fieldExists('field_storage[subform][sfds_container][sfds_default_bundle]');
+      $this->assertSession()->fieldValueEquals('field_storage[subform][sfds_container][sfds_default_bundle]', 'article');
 
       // Enable SFDS and save the form with a bundle
       // that does not contain this field.
       $this->submitForm(
         [
-          'sfds_enabled' => TRUE,
-          'sfds_mode' => 'global',
-          'sfds_default_bundle' => 'page',
+          'field_storage[subform][sfds_container][sfds_enabled]' => TRUE,
+          'field_storage[subform][sfds_container][sfds_mode]' => 'global',
+          'field_storage[subform][sfds_container][sfds_default_bundle]' => 'page',
         ],
-        'Save field settings'
+        'Save settings'
       );
       $this->assertSession()->statusCodeEquals(200);
       $this->assertSession()->pageTextContains('Error message');

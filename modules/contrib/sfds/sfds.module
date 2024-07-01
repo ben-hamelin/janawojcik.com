@@ -7,18 +7,18 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FormatterInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
 /**
- * Implements hook_form_FORM_ID_alter() for `field_storage_config_edit_form`.
+ * Implements hook_form_field_config_edit_form_alter().
  */
-function sfds_form_field_storage_config_edit_form_alter(
-  array &$form,
-  FormStateInterface $form_state
-): void {
+function sfds_form_field_config_edit_form_alter(array &$form, FormStateInterface $form_state) {
+  // Alter the form to include the shared field display settings.
   /** @var \Drupal\field\FieldStorageConfigInterface $entity */
-  $entity = $form_state->getFormObject()->getEntity();
+  $entity = $form_state->getFormObject()->getEntity()->getFieldStorageDefinition();
   $bundleInfo = \Drupal::service('entity_type.bundle.info')
     ->getBundleInfo($entity->getTargetEntityTypeId());
 
@@ -26,20 +26,20 @@ function sfds_form_field_storage_config_edit_form_alter(
     $value = $value['label'];
   });
 
-  $form['sfds_container'] = [
+  $form['field_storage']['subform']['sfds_container'] = [
     '#type' => 'fieldset',
     '#title' => t('Shared field display settings'),
     '#weight' => 10,
   ];
 
-  $form['sfds_container']['sfds_enabled'] = [
+  $form['field_storage']['subform']['sfds_container']['sfds_enabled'] = [
     '#type' => 'checkbox',
     '#title' => t('Enable shared field display for this field'),
     '#default_value' => $entity->getThirdPartySetting('sfds', 'enabled', FALSE),
     '#description' => t('When enabled, any field display changes to this field will update all field display uses across all bundles.'),
   ];
 
-  $form['sfds_container']['sfds_mode'] = [
+  $form['field_storage']['subform']['sfds_container']['sfds_mode'] = [
     '#type' => 'radios',
     '#title' => t('Shared field display mode'),
     '#options' => [
@@ -50,14 +50,16 @@ function sfds_form_field_storage_config_edit_form_alter(
     '#description' => t('When set to "Global", all bundles of the entity will use the same default display mode. When set to "Per bundle", the default display mode of the bundle will be used.'),
     '#states' => [
       'visible' => [
-        ':input[name="sfds_enabled"]' => [
-          'checked' => TRUE,
+        [
+          ':input[name="field_storage[subform][sfds_container][sfds_enabled]"]' => [
+            'checked' => TRUE,
+          ],
         ],
       ],
     ],
   ];
 
-  $form['sfds_container']['sfds_default_bundle'] = [
+  $form['field_storage']['subform']['sfds_container']['sfds_default_bundle'] = [
     '#type' => 'radios',
     '#title' => t('Which bundle should be used as the global default?'),
     '#options' => $bundleInfo,
@@ -65,18 +67,21 @@ function sfds_form_field_storage_config_edit_form_alter(
     '#description' => t('Select the bundle whose field display settings should be used as the global default.'),
     '#states' => [
       'visible' => [
-        ':input[name="sfds_enabled"]' => [
-          'checked' => TRUE,
-        ],
-        ':input[name="sfds_mode"]' => [
-          'value' => 'global',
+        [
+          ':input[name="field_storage[subform][sfds_container][sfds_enabled]"]' => [
+            'checked' => TRUE,
+          ],
+          'and' => [],
+          ':input[name="field_storage[subform][sfds_container][sfds_mode]"]' => [
+            'value' => 'global',
+          ],
         ],
       ],
     ],
   ];
 
   // Add form submit handler to save the third party settings.
-  $form['actions']['submit']['#submit'][] = 'sfds_field_storage_config_edit_form_submit';
+  array_unshift($form['actions']['submit']['#submit'], 'sfds_field_storage_config_edit_form_submit');
   $form['#validate'][] = 'sfds_field_storage_config_edit_form_validate';
 }
 
@@ -94,15 +99,26 @@ function sfds_field_storage_config_edit_form_validate(
   array $form,
   FormStateInterface $form_state
 ): void {
+  // Extract the shared field display settings.
+  $fieldStorage = $form_state->getValue('field_storage', [
+    'sfds_enabled' => NULL,
+    'sfds_mode' => NULL,
+    'sfds_default_bundle' => NULL,
+  ]);
+
+  [
+    'sfds_enabled' => $enabled,
+    'sfds_mode' => $mode,
+    'sfds_default_bundle' => $bundle,
+  ] = $fieldStorage['subform']['sfds_container'];
 
   // Skip validation if the setting is disabled.
-  if (!$form_state->getValue('sfds_enabled')) {
+  if (!$enabled) {
     return;
   }
 
-  $mode = $form_state->getValue('sfds_mode');
   if (!in_array($mode, ['global', 'bundle'])) {
-    $form_state->setErrorByName('sfds_mode', t('%value is not a valid choice', ['%value' => $mode]));
+    $form_state->setErrorByName('field_storage][subform][sfds_container][sfds_mode', t('%value is not a valid choice', ['%value' => $mode]));
   }
 
   // Validate field exists on bundles only when the mode is set to global.
@@ -111,15 +127,14 @@ function sfds_field_storage_config_edit_form_validate(
   }
 
   /** @var \Drupal\field\FieldStorageConfigInterface $entity */
-  $entity = $form_state->getFormObject()->getEntity();
-  $bundle = $form_state->getValue('sfds_default_bundle');
+  $entity = $form_state->getFormObject()->getEntity()->getFieldStorageDefinition();
   $targetEntityTypeId = $entity->getTargetEntityTypeId();
   $fieldName = $entity->get('field_name');
 
   // Ensure the bundle exists on the entity type.
   if (!sfds_bundle_exists($targetEntityTypeId, $bundle)) {
     $form_state->setErrorByName(
-      'sfds_default_bundle',
+      'field_storage][subform][sfds_container][sfds_default_bundle',
       t('The bundle %bundle does not exist on the %entity_type entity type and may not be used as the global default.', [
         '%bundle' => $bundle,
         '%entity_type' => $targetEntityTypeId,
@@ -129,7 +144,7 @@ function sfds_field_storage_config_edit_form_validate(
   // Ensure the field exists on the selected bundle.
   if (!sfds_bundle_has_field($fieldName, $targetEntityTypeId, $bundle)) {
     $form_state->setErrorByName(
-      'sfds_default_bundle',
+      'field_storage][subform][sfds_container][sfds_default_bundle',
       t('The field %field does not exist on the %bundle bundle and may not be used as the global default.', [
         '%field' => $fieldName,
         '%bundle' => $bundle,
@@ -151,11 +166,23 @@ function sfds_field_storage_config_edit_form_submit(
   array $form,
   FormStateInterface $form_state
 ): void {
+  // Extract the shared field display settings.
+  $fieldStorage = $form_state->getValue('field_storage', [
+    'sfds_enabled' => NULL,
+    'sfds_mode' => NULL,
+    'sfds_default_bundle' => NULL,
+  ]);
+
+  [
+    'sfds_enabled' => $enabled,
+    'sfds_mode' => $mode,
+    'sfds_default_bundle' => $bundle,
+  ] = $fieldStorage['subform']['sfds_container'];
   /** @var \Drupal\field\Entity\FieldStorageConfig $entity */
-  $entity = $form_state->getFormObject()->getEntity();
-  $entity->setThirdPartySetting('sfds', 'enabled', (bool) $form_state->getValue('sfds_enabled'));
-  $entity->setThirdPartySetting('sfds', 'mode', $form_state->getValue('sfds_mode'));
-  $entity->setThirdPartySetting('sfds', 'bundle', $form_state->getValue('sfds_default_bundle'));
+  $entity = $form_state->getFormObject()->getEntity()->getFieldStorageDefinition();
+  $entity->setThirdPartySetting('sfds', 'enabled', (bool) $enabled);
+  $entity->setThirdPartySetting('sfds', 'mode', $mode);
+  $entity->setThirdPartySetting('sfds', 'bundle', $bundle);
   $entity->save();
 }
 
@@ -220,7 +247,7 @@ function sfds_form_entity_view_display_edit_form_alter(&$form, FormStateInterfac
   // shared field display enabled.
   foreach ($form['#fields'] as $field) {
     /** @var \Drupal\field\Entity\FieldConfig $fieldEntity */
-    $fieldEntity = $fieldConfigStorage->load("{$viewDisplay->getTargetEntityTypeId()}.{$viewDisplay->getTargetBundle()}.${field}");
+    $fieldEntity = $fieldConfigStorage->load("{$viewDisplay->getTargetEntityTypeId()}.{$viewDisplay->getTargetBundle()}.{$field}");
     // Guard an empty entity. This usually happens in a multi-lingual setup.
     if (empty($fieldEntity)) {
       continue;
@@ -234,44 +261,50 @@ function sfds_form_entity_view_display_edit_form_alter(&$form, FormStateInterfac
       $sfdsBundle = $fieldStorage->getThirdPartySetting('sfds', 'bundle', '');
       $summary[] = t("Shared field display is enabled for this field in %mode mode.", ['%mode' => $sfdsMode]);
       $newLink = NULL;
+      $optedOut = $viewDisplay->getComponent($field)['third_party_settings']['sfds']['opt_out'] ?? FALSE;
 
-      if ($sfdsMode === 'global') {
-        $summary[] = t("The 'default' display of the %bundle bundle is used as the global default for all display settings for this field.", ['%bundle' => $sfdsBundle]);
-
-        // The bundle being viewed is not the global default. Show the link
-        // if the bundles differ or if the display mode is not the default
-        // of the SFDS selected bundle.
-        if (
-          $viewDisplay->getTargetBundle() !== $sfdsBundle ||
-          (
-            $viewDisplay->getTargetBundle() === $sfdsBundle &&
-            $viewDisplay->getMode() !== 'default'
-          )
-        ) {
-          $newLink = Url::fromRoute("entity.entity_view_display.{$viewDisplay->getTargetEntityTypeId()}.view_mode", [
-            'node_type' => $sfdsBundle ,
-            'view_mode_name' => 'default',
-          ]);
-        }
+      if ($optedOut) {
+        $summary[] = t("This field has been opted out of SFDS.");
       }
       else {
-        $summary[] = t("Display settings are managed in the 'default' display of this bundle.");
-        // Link to the default display of the selected bundle.
-        if ($viewDisplay->getMode() !== 'default') {
-          $newLink = Url::fromRoute("entity.entity_view_display.{$viewDisplay->getTargetEntityTypeId()}.view_mode", [
-            'node_type' => $viewDisplay->getTargetBundle(),
-            'view_mode_name' => 'default',
-          ]);
+        if ($sfdsMode === 'global') {
+          $summary[] = t("The 'default' display of the %bundle bundle is used as the global default for all display settings for this field.", ['%bundle' => $sfdsBundle]);
+
+          // The bundle being viewed is not the global default. Show the link
+          // if the bundles differ or if the display mode is not the default
+          // of the SFDS selected bundle.
+          if (
+            $viewDisplay->getTargetBundle() !== $sfdsBundle ||
+            (
+              $viewDisplay->getTargetBundle() === $sfdsBundle &&
+              $viewDisplay->getMode() !== 'default'
+            )
+          ) {
+            $newLink = Url::fromRoute("entity.entity_view_display.{$viewDisplay->getTargetEntityTypeId()}.view_mode", [
+              'node_type' => $sfdsBundle ,
+              'view_mode_name' => 'default',
+            ]);
+          }
         }
-      }
+        else {
+          $summary[] = t("Display settings are managed in the 'default' display of this bundle.");
+          // Link to the default display of the selected bundle.
+          if ($viewDisplay->getMode() !== 'default') {
+            $newLink = Url::fromRoute("entity.entity_view_display.{$viewDisplay->getTargetEntityTypeId()}.view_mode", [
+              'node_type' => $viewDisplay->getTargetBundle(),
+              'view_mode_name' => 'default',
+            ]);
+          }
+        }
 
-      // If there is a link present, append it to the summary.
-      if (!is_null($newLink)) {
-        $summary[] = t("<a href='@link'>Click here to manage the display settings for this field.</a>", ['@link' => $newLink->toString()]);
+        // If there is a link present, append it to the summary.
+        if (!is_null($newLink) && !$optedOut) {
+          $summary[] = t("<a href='@link'>Click here to manage the display settings for this field.</a>", ['@link' => $newLink->toString()]);
 
-        // Visually hide the fields if they are not the management display.
-        $form['fields'][$field]['label']['#attributes']['class'][] = 'visually-hidden';
-        $form['fields'][$field]['plugin']['type']['#attributes']['class'][] = 'visually-hidden';
+          // Visually hide the fields if they are not the management display.
+          $form['fields'][$field]['label']['#attributes']['class'][] = 'visually-hidden';
+          $form['fields'][$field]['plugin']['type']['#attributes']['class'][] = 'visually-hidden';
+        }
       }
 
       // Ensure we have a summary element present.
@@ -280,7 +313,33 @@ function sfds_form_entity_view_display_edit_form_alter(&$form, FormStateInterfac
       }
 
       // Merge our summary into the existing summary.
-      $form['fields'][$field]['settings_summary']['#context']['summary'] = array_merge($form['fields'][$field]['settings_summary']['#context']['summary'], $summary);
+      $form['fields'][$field]['settings_summary']['#context']['summary'] = (!$optedOut ? $summary : array_merge($form['fields'][$field]['settings_summary']['#context']['summary'], $summary));
     }
   }
+}
+
+/**
+ * Implements hook_field_formatter_third_party_settings_form().
+ */
+function sfds_field_formatter_third_party_settings_form(
+  FormatterInterface $plugin,
+  FieldDefinitionInterface $field_definition,
+  $view_mode,
+  array $form,
+  FormStateInterface $form_state
+) {
+  $element = [];
+
+  $fieldStorage = $field_definition->getFieldStorageDefinition();
+  // Ensure SFDS is enabled on the field.
+  if ($fieldStorage->getThirdPartySetting('sfds', 'enabled', FALSE)) {
+    $element['opt_out'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Opt this field out of SFDS'),
+      '#default_value' => $plugin
+        ->getThirdPartySetting('sfds', 'opt_out'),
+    ];
+  }
+
+  return $element;
 }

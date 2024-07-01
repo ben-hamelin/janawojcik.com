@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Drupal\Tests\sfds\Functional;
 
 use Drupal\Tests\BrowserTestBase;
+use Drupal\Tests\field_ui\Traits\FieldUiTestTrait;
 
 /**
  * Test the field formatter override.
@@ -12,6 +13,9 @@ use Drupal\Tests\BrowserTestBase;
  * @group sfds
  */
 class FieldFormmaterOverrideTest extends BrowserTestBase {
+
+  use FieldUiTestTrait;
+
   /**
    * {@inheritdoc}
    */
@@ -178,21 +182,11 @@ class FieldFormmaterOverrideTest extends BrowserTestBase {
     bool $isNewField = TRUE
   ): void {
     if ($isNewField) {
-      $this->drupalGet("/admin/structure/types/manage/{$contentType}/fields/add-field");
-      $this->submitForm(
-        [
-          'new_storage_type' => $fieldType,
-          'label' => $machineName,
-          'field_name' => $machineName,
-        ],
-        'Save and continue'
-      );
+      $this->fieldUIAddNewField("/admin/structure/types/manage/{$contentType}", "{$machineName}", "{$machineName}", $fieldType);
     }
     else {
-      $this->drupalGet("/admin/structure/types/manage/{$contentType}/fields/reuse");
-      $this->submitForm([], 'Re-use');
+      $this->fieldUIAddExistingField("/admin/structure/types/manage/{$contentType}", "field_{$machineName}");
     }
-
   }
 
   /**
@@ -246,19 +240,19 @@ class FieldFormmaterOverrideTest extends BrowserTestBase {
   ): void {
     // @todo Make the content type dynamic.
     $contentType = self::CONTENT_TYPES[0];
-    $this->drupalGet("/admin/structure/types/manage/{$contentType}/fields/node.{$contentType}.field_{$fieldName}/storage");
+    $this->drupalGet("/admin/structure/types/manage/{$contentType}/fields/node.{$contentType}.field_{$fieldName}");
     $formValues = [
-      'sfds_enabled' => $value,
-      'sfds_mode' => $mode,
+      'field_storage[subform][sfds_container][sfds_enabled]' => $value,
+      'field_storage[subform][sfds_container][sfds_mode]' => $mode,
     ];
 
     if (!is_null($bundle)) {
-      $formValues['sfds_default_bundle'] = $bundle;
+      $formValues['field_storage[subform][sfds_container][sfds_default_bundle]'] = $bundle;
     }
 
     $this->submitForm(
       $formValues,
-      'Save field settings'
+      'Save settings'
     );
     $this->assertSession()->statusCodeEquals(200);
   }
@@ -375,6 +369,50 @@ class FieldFormmaterOverrideTest extends BrowserTestBase {
       $this->assertSession()->statusCodeEquals(200);
       $this->assertSession()->fieldValueEquals('fields[field_sfds_boolean][label]', 'hidden');
     }
+  }
+
+  /**
+   * Tests that displays can opt-out of shared field display settings.
+   *
+   * @see: https://www.drupal.org/project/sfds/issues/3402531
+   */
+  public function testSharedFieldDisplaySettingsOptOut(): void {
+    // Go to the default home page.
+    $this->drupalGet("/node");
+    $this->assertSession()->statusCodeEquals(200);
+
+    foreach (self::FIELDS as $label => $type) {
+      // This is a teaser view, which should not have the label displayed.
+      $this->assertSession()->pageTextNotContains($label);
+    }
+
+    // Enable per-bundle defaults for the fields.
+    foreach (self::FIELDS as $label => $type) {
+      $this->toggleSfds($label, TRUE, 'bundle');
+    }
+
+    // Change the article teaser to opt-out.
+    $this->drupalGet("/admin/structure/types/manage/sfds_article/display/teaser");
+    $this->assertSession()->statusCodeEquals(200);
+    $this->submitForm([], 'field_sfds_boolean_settings_edit');
+    $this->assertSession()->statusCodeEquals(200);
+    $formValues = [
+      'fields[field_sfds_boolean][settings_edit_form][settings][format]' => 'enabled-disabled',
+      'fields[field_sfds_boolean][settings_edit_form][third_party_settings][sfds][opt_out]' => '1',
+    ];
+    $this->submitForm(
+      $formValues,
+      'Save'
+    );
+    $this->assertSession()->statusCodeEquals(200);
+
+    // Assert the teaser settings are indeed opted-out.
+    // Go back to the home page.
+    $this->drupalGet("/node");
+    // Confirm the settings change is overridden.
+    $this->assertSession()->pageTextContains('Enabled');
+
+    // @todo Add tests for the anonymous user.
   }
 
 }

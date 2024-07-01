@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\sfds;
 
@@ -80,7 +80,8 @@ class FormatterPluginManagerOverride extends FormatterPluginManager {
    */
   public function getInstance(array $options) {
     // Check the route and use defaults when on the field ui form.
-    if (str_starts_with($this->routeMatch->getRouteName(), 'entity.entity_view_display.')) {
+    if (!empty($this->routeMatch->getRouteName()) && 
+      str_starts_with($this->routeMatch->getRouteName(), 'entity.entity_view_display.')) {
       return parent::getInstance($options);
     }
 
@@ -94,10 +95,14 @@ class FormatterPluginManagerOverride extends FormatterPluginManager {
       ->getFieldStorageDefinition()
       ->getThirdPartySettings('sfds');
 
+    $sfdsOptOut = $options['configuration']['third_party_settings']['sfds']['opt_out'] ?? FALSE;
+
     // Is the field storage configured to use shared display settings?
+    // Is the field configured to opt out of shared display settings?
     if (
       !empty($sfds) &&
-      $sfds['enabled'] === TRUE
+      $sfds['enabled'] === TRUE &&
+      !$sfdsOptOut
     ) {
       $displayEntity = "{$fieldConfig->getTargetEntityTypeId()}.{$fieldConfig->getTargetBundle()}.default";
       if ($sfds['mode'] === 'global' && !empty($sfds['bundle'])) {
@@ -118,7 +123,6 @@ class FormatterPluginManagerOverride extends FormatterPluginManager {
         $options['view_mode'] = 'default';
         $options['configuration'] = $defaultDisplaySettings;
       }
-
     }
 
     // Default to the parent.

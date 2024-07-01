@@ -11,3 +11,13 @@ field.storage.*.*.third_party.sfds:
     bundle:
       type: string
       label: 'Default bundle for global mode.'
+
+
+# Add the opt out schema to the field formatter.
+field.formatter.third_party.sfds:
+  type: mapping
+  label: 'Opt out of Shared Field Display Settings'
+  mapping:
+    opt_out:
+      type: boolean
+      label: 'Opt-out of shared display settings'
