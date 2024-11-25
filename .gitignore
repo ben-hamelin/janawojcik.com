@@ -85,3 +85,11 @@
 
 # Ignore .env files as they are personal
 #/.env
+
+vendor
+core
+modules
+profiles
+themes
+!modules/custom
+!themes/custom

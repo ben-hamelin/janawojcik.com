@@ -1,1 +1,0 @@
-Shared Field Display Settings
